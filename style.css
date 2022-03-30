@@ -7,7 +7,6 @@ you're new to CSS they may seem a little complicated, but you can scroll down
 to this section's matching END comment to see page-specific styles.
 ******************************************************************************/
 
-
 /* 
   The style rules specify elements by type and by attributes such as class and ID
   Each section indicates an element or elements, then lists the style properties to apply
@@ -16,14 +15,14 @@ to this section's matching END comment to see page-specific styles.
 
 /* Our default values set as CSS variables */
 :root {
-  --color-bg: #69F7BE;
+  --color-bg: #1f8bb7;
   --color-text-main: #000000;
-  --color-primary: #FFFF00;
+  --color-primary: #ffff00;
   --wrapper-height: 87vh;
   --image-max-width: 300px;
   --image-margin: 3rem;
-  --font-family: "HK Grotesk";
-  --font-family-header: "HK Grotesk";
+  --font-family: "serif";
+  --font-family-header: "serif";
 }
 
 /* Basic page style resets */
@@ -35,21 +34,24 @@ to this section's matching END comment to see page-specific styles.
 }
 
 /* Import fonts */
-@font-face {
-  font-family: HK Grotesk;
+/*@font-face {
+  font-family: serif;
   src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
     format("opentype");
 }
 @font-face {
-  font-family: HK Grotesk;
+  font-family: serif;
   font-weight: bold;
   src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
-    format("opentype");
+    format("opentype")*/
+
+@font-face {
+  font-family: serif;
 }
 
 /* Our remix on glitch button */
 .btn--remix {
-  font-family: HK Grotesk;
+  font-family: serif;
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
@@ -57,12 +59,12 @@ to this section's matching END comment to see page-specific styles.
   height: 2.75rem;
   align-items: center;
   cursor: pointer;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
   text-decoration: none;
-  color: #000;
+  color: #000000;
   white-space: nowrap;
   margin-left: auto;
 }
@@ -70,7 +72,7 @@ to this section's matching END comment to see page-specific styles.
   margin-right: 0.5rem;
 }
 .btn--remix:hover {
-  background-color: #D0FFF1;
+  background-color: #d0fff1;
 }
 
 /* Navigation grid */
@@ -81,23 +83,24 @@ to this section's matching END comment to see page-specific styles.
   padding: 1rem 0 0.75rem 0;
   width: 100%;
   flex-wrap: wrap;
-  border-top: 4px solid #fff;
+  border-top: 4px solid #ffffff;
 }
 
-.footer a:not(.btn--remix):link,
-a:not(.btn--remix):visited {
-  font-family: HK Grotesk;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: #000;
-  text-decoration: none;
-  border-style: none;
-}
 .footer a:hover {
   background: var(--color-primary);
 }
 
+a:not(.btn--remix):visited {
+  font-family: serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #000000;
+  text-decoration: none;
+  border-style: none;
+}
+
+.footer a:not(.btn--remix):link,
 .footer .links {
   padding: 0.5rem 1rem 1.5rem;
   white-space: nowrap;
@@ -111,7 +114,7 @@ END Glitch hello-app default styles
 ******************************************************************************/
 
 body {
-  font-family: HK Grotesk;
+  font-family: serif;
   background-color: var(--color-bg);
 }
 
@@ -131,8 +134,8 @@ body {
 
 /* Very light scaling for our illustration */
 .title {
-  color: #2800FF;
-  font-family: HK Grotesk;
+  color: #000000;
+  font-family: serif;
   font-style: normal;
   font-weight: bold;
   font-size: 100px;
@@ -157,7 +160,7 @@ button,
 input {
   font-family: inherit;
   font-size: 100%;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 4px;
@@ -167,7 +170,7 @@ input {
 
 /* Subheading */
 h2 {
-  color: #2800FF;
+  color: #000000;
 }
 
 /* Interactive image */
