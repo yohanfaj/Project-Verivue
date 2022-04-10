@@ -1,18 +1,3 @@
-/******************************************************************************
-START Glitch hello-app default styles
-
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
-
-/* 
-  The style rules specify elements by type and by attributes such as class and ID
-  Each section indicates an element or elements, then lists the style properties to apply
-  See if you can cross-reference the rules in this file with the elements in index.html
-*/
-
 /* Our default values set as CSS variables */
 :root {
   --color-bg: #1f8bb7;
@@ -21,7 +6,7 @@ to this section's matching END comment to see page-specific styles.
   --wrapper-height: 87vh;
   --image-max-width: 300px;
   --image-margin: 3rem;
-  --font-family: "serif";
+  --font-family: "Arial";
   --font-family-header: "serif";
 }
 
@@ -46,17 +31,29 @@ to this section's matching END comment to see page-specific styles.
     format("opentype")*/
 
 @font-face {
-  font-family: serif;
+  font-family: "serif";
+}
+
+@font-face {
+  font-family: "Corbel";
+  src: url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/CORBELL.TTF?v=1649582654480")
+    format("ttf");
+}
+
+@font-face {
+  font-family: "Arial";
+  src: url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/ARIAL.TTF?v=1649582478715")
+    format ("ttf");
 }
 
 /* Our remix on glitch button */
-.btn--remix {
-  font-family: serif;
+/*btn--remix {
+  font-family: 'Arial', serif;
   padding: 0.75rem 1rem;
   font-size: 1.1rem;
   line-height: 1rem;
   font-weight: 500;
-  height: 2.75rem;
+  height: 5rem;
   align-items: center;
   cursor: pointer;
   background: #ffffff;
@@ -73,45 +70,7 @@ to this section's matching END comment to see page-specific styles.
 }
 .btn--remix:hover {
   background-color: #d0fff1;
-}
-
-/* Navigation grid */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem auto 0;
-  padding: 1rem 0 0.75rem 0;
-  width: 100%;
-  flex-wrap: wrap;
-  border-top: 4px solid #ffffff;
-}
-
-.footer a:hover {
-  background: var(--color-primary);
-}
-
-a:not(.btn--remix):visited {
-  font-family: serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: #000000;
-  text-decoration: none;
-  border-style: none;
-}
-
-.footer a:not(.btn--remix):link,
-.footer .links {
-  padding: 0.5rem 1rem 1.5rem;
-  white-space: nowrap;
-}
-
-.divider {
-  padding: 0 1rem;
-}
-/******************************************************************************
-END Glitch hello-app default styles
-******************************************************************************/
+}*/
 
 body {
   font-family: serif;
@@ -135,7 +94,7 @@ body {
 /* Very light scaling for our illustration */
 .title {
   color: #000000;
-  font-family: serif;
+  font-family: "Arial", serif;
   font-style: normal;
   font-weight: bold;
   font-size: 100px;
@@ -158,7 +117,7 @@ body {
 /* Button - Add it from the README instructions */
 button,
 input {
-  font-family: inherit;
+  font-family: "Arial", serif;
   font-size: 100%;
   background: #ffffff;
   border: 1px solid #000000;
@@ -168,9 +127,23 @@ input {
   transition: 500ms;
 }
 
+h1 {
+  font-family: "Arial", serif;
+  text-align: center;
+}
+
 /* Subheading */
-h2 {
+
+.Welcome {
   color: #000000;
+  font-family: "Arial", serif;
+  text-align: center;
+}
+
+.Diseases {
+  color: #000000;
+  font-family: "Arial", serif;
+  text-align: center;
 }
 
 /* Interactive image */
