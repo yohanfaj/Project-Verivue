@@ -16,7 +16,7 @@
       You can write text in a comment and the content won't be visible in the page
     -->
 
-    <title>VeriVue®</title>
+    <title>VeriVue® - AMD Test</title>
 
     <!-- Meta tags for SEO and social sharing -->
     <link rel="canonical" href="https://project-verivue.glitch.me/" />
@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="/main.css" />
 
     <!-- Import the webpage's javascript file -->
-    <script src="/main_script.js" defer></script>
+    <script src="/amd/script.js" defer></script>
   </head>
   <body>
     <!--
@@ -58,23 +58,21 @@
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
         <h1 class="title">VeriVue®</h1>
-
+        <h2 class="question">Focus on the black dot in the center for 10 seconds, are the lines surrounding it straight?</h2>
         <img
-          src="https://i.imgur.com/0ZQjld2.png"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
+          id = "amsler_test"
+          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649917774448" 
+          width="50%" 
+          height="50%"
         />
         <!-- Instructions on using this project -->
         <div class="Answers">
-          <h2>Click on the eye disease you want to treat below:</h2>
-          <button id="myopia_start">Myopia / Hyperopia</button>
+          <p>
+            <center>Select one answer.</center>
+          </p>
+          <button id="yes_answer">Yes, they are straight</button>
 
-          <button id="amd_start">AMD</button>
-
-          <button id="astig_start">Astigmatism</button>
-
-          <button id="dalton_start">Daltonism</button>
+          <button id="no_answer">No, they are slightly deform</button>
         </div>
       </div>
     </div>
