@@ -4,7 +4,7 @@ const myopia_start_btn = document.querySelector("#myopia_start"); // Get the but
 // Detect clicks on the button
 if (myopia_start_btn) {
   myopia_start_btn.onclick = function () {
-    window.open("myopia.html", "_self");
+    window.open("myopia/index.html", "_self");
   };
 }
 
