@@ -6,7 +6,7 @@ if (fourteen_start_btn) {
   };
 }
 
-const fifteen_start_btn = document.querySelector("#14_start"); // Get the button from the page
+const fifteen_start_btn = document.querySelector("#15_start"); // Get the button from the page
 // Detect clicks on the button
 if (fifteen_start_btn) {
   fifteen_start_btn.onclick = function () {
