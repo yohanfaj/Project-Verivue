@@ -44,6 +44,8 @@ body {
   place-items: center;
   margin: 0 1rem;
 }
+
+
 .question {
   min-height: var(--wrapper-height);
   font-family: "Tahoma", serif;
@@ -54,7 +56,6 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  font 
   align-items: center;
   justify-content: center;
 }
@@ -70,12 +71,9 @@ body {
   margin: 0;
 }
 
-/* Instructions */
-.instructions {
-  margin: 1rem auto 0;
-}
 
-/* Button - Add it from the README instructions */
+
+
 button,
 input {
   font-family: "Tahoma", serif;
@@ -96,13 +94,13 @@ h1 {
 
 /* Subheading */
 
-.Welcome {
+.select_tests {
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;
 }
 
-.Answer {
+.buttons {
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;

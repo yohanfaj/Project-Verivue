@@ -1,31 +1,21 @@
-const fourteen_start_btn = document.querySelector("#14_start"); // Get the button from the page
+var btn_audio_check = new Audio('https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/check_button_audio.mp3?v=1649923001726');
+btn_audio_check.volume = 0.5;
+
+const distance_btn = document.querySelector("#distance_start"); // Get the button from the page
 // Detect clicks on the button
-if (fourteen_start_btn) {
-  fourteen_start_btn.onclick = function () {
-    window.open("myopia/index.html", "_self");
+if (distance_btn) {
+  distance_btn.onclick = function () {
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/index.html", "_self");
   };
 }
 
-const fifteen_start_btn = document.querySelector("#15_start"); // Get the button from the page
+const rg_btn = document.querySelector("#rg_start"); // Get the button from the page
 // Detect clicks on the button
-if (fifteen_start_btn) {
-  fifteen_start_btn.onclick = function () {
-    window.open("myopia/index.html", "_self");
+if (rg_btn) {
+  rg_btn.onclick = function () {
+    btn_audio_check.play();
+    window.open("/myopia/red_green_test/index.html", "_self");
   };
 }
 
-const seventeen_start_btn = document.querySelector("#17_start"); // Get the button from the page
-// Detect clicks on the button
-if (seventeen_start_btn) {
-  seventeen_start_btn.onclick = function () {
-    window.open("myopia/index.html", "_self");
-  };
-}
-
-const twenty_start_btn = document.querySelector("#20_start"); // Get the button from the page
-// Detect clicks on the button
-if (twenty_start_btn) {
-  twenty_start_btn.onclick = function () {
-    window.open("myopia/index.html", "_self");
-  };
-}
