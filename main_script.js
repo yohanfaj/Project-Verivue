@@ -20,7 +20,7 @@ const astig_start_btn = document.querySelector("#astig_start"); // Get the butto
 // Detect clicks on the button
 if (astig_start_btn) {
   astig_start_btn.onclick = function () {
-    window.open("astigmatism.html", "_self");
+    window.open("astigmatism/index.html", "_self");
   };
 }
 
@@ -28,6 +28,6 @@ const dalton_start_btn = document.querySelector("#dalton_start"); // Get the but
 // Detect clicks on the button
 if (dalton_start_btn) {
   dalton_start_btn.onclick = function () {
-    window.open("daltonism.html", "_self");
+    window.open("daltonism/index.html", "_self");
   };
 }
