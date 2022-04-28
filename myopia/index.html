@@ -39,44 +39,50 @@
     <meta name="twitter:card" content="summary" />
 
     <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/myopia/styles.css" />
 
     <!-- Import the webpage's javascript file -->
     <script src="/myopia/script.js" defer></script>
   </head>
   <body>
-    <!--
-      This is the body of the page
-      Look at the elements and see how they appear in the rendered page on the right
-      Each element is defined using tags, with < and > indicating where each one opens and closes
-      There are elements for sections of the page, images, text, and more
-      The elements include attributes referenced in the CSS for the page style
-    -->
-
-    <!-- The wrapper and content divs set margins and positioning -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <!-- This is the start of content for our page -->
-        <a class="title">Myopia test</a>
-        <h2 class="description">
-          What is myopia ?
-        </h2>
-        <p>
-          It is a vision disorder that results in blurred distance vision and sharp near vision. To explain it in a technical way, a myopic eye is an eye that is geometrically long. This means that the distance between the cornea and the retina is greater than normal. Myopia can also be due to an eye that is too powerful when the curvature of the cornea is said to be "too strong". This causes light to focus in front of the retina instead of on it, blurring objects in the distance. As a result, visual acuity is diminished. 
-        </p>
-        <div class="inches">
-          <p class="question">
-            Before starting the test, first of all, please select the size of your screen
-          </p>
-          <button id="14_start">14 inches</button>
-          <button id="15_start">15 inches</button>
-          <button id="17_start">17 inches</button>
-          <button id="20_start">20 inches</button>
-        </div>
-      </div>
+    
+    <div class="title">
+      <a style="font-size: 50px;" class="title" id="title">VeriVue®</a>
     </div>
+    
+    <div class="select_tests">       
+      <h2>
+        We propose you two different tests to diagnotize myopia &amp hyperopia:  
+       </h2>
+        
+       <ol>
+         <li>
+           <h3>
+             The Distance Test
+           </h3>
+          <p>
+            A vision test based on perception of characters on-screen at a given distance.
+          </p>
+        </li>
+          
+         <li>
+           <h3>
+             The Red-Green Test
+          </h3>
+          <p>
+            A vision test that involves distinguishing a single character within 2 different colors.
+          </p>
+         </li>
+      </ol>
+     </div>
+    
+    <div class="buttons">
+       <h2>Click on the wanted test:</h2>
+          <button id="distance_start">Distance Test</button>
 
-    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
+          <button id="rg_start">Red-Green Test</button>
+    </div>
+   
   </body>
   
   <style>
