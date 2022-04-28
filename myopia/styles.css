@@ -1,0 +1,111 @@
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #1f8bb7;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "Tahoma";
+  --font-family-header: "serif";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+
+
+@font-face {
+  font-family: "serif";
+}
+
+
+@font-face {
+  font-family: "Arial";
+  src: url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/ARIAL.TTF")
+    format ("ttf");
+}
+
+
+body {
+  font-family: serif;
+  background-color: var(--color-bg);
+}
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.question {
+  min-height: var(--wrapper-height);
+  font-family: "Tahoma", serif;
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  font 
+  align-items: center;
+  justify-content: center;
+}
+
+/* Very light scaling for our illustration */
+.title {
+  color: #000000;
+  font-family: "Tahoma", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+}
+
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+
+/* Button - Add it from the README instructions */
+button,
+input {
+  font-family: "Tahoma", serif;
+  font-size: 100%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+/* Subheading */
+
+.Welcome {
+  color: #000000;
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+.Answer {
+  color: #000000;
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+
