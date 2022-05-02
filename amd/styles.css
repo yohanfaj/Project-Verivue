@@ -19,12 +19,6 @@
 }
 
 
-
-@font-face {
-  font-family: "serif";
-}
-
-
 @font-face {
   font-family: "Arial";
   src: url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/ARIAL.TTF")
@@ -34,7 +28,7 @@
 
 body {
   font-family: serif;
-  background-color: var(--color-bg);
+  background-color: #1f8bb7;
 }
 
 /* Page structure */
@@ -44,17 +38,9 @@ body {
   place-items: center;
   margin: 0 1rem;
 }
-.question {
-  min-height: var(--wrapper-height);
-  font-family: "Tahoma", serif;
-  display: grid;
-  place-items: center;
-  margin: 0 1rem;
-}
 .content {
   display: flex;
   flex-direction: column;
-  font 
   align-items: center;
   justify-content: center;
 }
@@ -62,12 +48,19 @@ body {
 /* Very light scaling for our illustration */
 .title {
   color: #000000;
-  font-family: "Tahoma", serif;
+  font-family: 'Playfair Display SC', serif;
   font-style: normal;
   font-weight: bold;
   font-size: 100px;
   line-height: 105%;
   margin: 0;
+}
+
+/* Very light scaling for our illustration */
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
 }
 
 /* Instructions */
@@ -94,6 +87,16 @@ h1 {
   text-align: center;
 }
 
+h2{
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+p{
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
 /* Subheading */
 
 .Welcome {
@@ -102,10 +105,102 @@ h1 {
   text-align: center;
 }
 
-.Answer {
+.Diseases {
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;
 }
 
+/* Interactive image */
+.illustration:active {
+  transform: translateY(5px);
+}
 
+/* Button dip
+- Toggling this class on and off will move it down and up again
+- The button transition property above determines the speed of the translate (500ms)
+*/
+.dipped {
+  transform: translateY(5px);
+}
+
+/* Banderolle Titre */
+.banderolle {
+  padding : 50px 50px 50px 50px;
+  margin : -10px;
+  background-color : red;
+  width : 100%;
+  
+}
+ /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+ /* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #106dc9;
+  color: black;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #3b8cdb;
+  color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+} 
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
+#imgExplain{
+  width: 25%;
+  text-align: center;
+  margin:auto;
+  display:flex;
+}
