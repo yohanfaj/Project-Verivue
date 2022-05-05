@@ -45,6 +45,23 @@ body {
   margin: 0 1rem;
 }
 
+.title {
+  color: #000000;
+  font-family: 'Tahoma', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+}
+
+/* Very light scaling for our illustration */
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
+}
+
 
 .question {
   min-height: var(--wrapper-height);
@@ -59,18 +76,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-/* Very light scaling for our illustration */
-.title {
-  color: #000000;
-  font-family: "Tahoma", serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 100px;
-  line-height: 105%;
-  margin: 0;
-}
-
 
 
 
@@ -98,12 +103,52 @@ h1 {
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;
+  font-size: 20px; 
 }
 
 .buttons {
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+
+/* Images of the 2 tests */
+ 
+.img_tests {
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
+  
+}
+
+#distance_img {
+  margin-right: 30px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+#rg_img {
+  margin-right: 30px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px
+}
+
+
+/* Interactive image */
+.illustration:active {
+  transform: translateY(5px);
+}
+
+/* Button dip
+- Toggling this class on and off will move it down and up again
+- The button transition property above determines the speed of the translate (500ms)
+*/
+.dipped {
+  transform: translateY(5px);
 }
 
 
