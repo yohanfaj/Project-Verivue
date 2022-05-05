@@ -98,40 +98,14 @@ p{
 }
 
 /* Subheading */
-
-.Welcome {
+#select_answer{
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;
+  font-size: 20px; 
 }
 
-.Diseases {
-  color: #000000;
-  font-family: "Tahoma", serif;
-  text-align: center;
-}
 
-/* Interactive image */
-.illustration:active {
-  transform: translateY(5px);
-}
-
-/* Button dip
-- Toggling this class on and off will move it down and up again
-- The button transition property above determines the speed of the translate (500ms)
-*/
-.dipped {
-  transform: translateY(5px);
-}
-
-/* Banderolle Titre */
-.banderolle {
-  padding : 50px 50px 50px 50px;
-  margin : -10px;
-  background-color : red;
-  width : 100%;
-  
-}
  /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -170,7 +144,7 @@ p{
   background-color: #fefefe;
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
+  border: 1px solid #888888;
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
