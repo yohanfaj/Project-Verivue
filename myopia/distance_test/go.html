@@ -46,54 +46,59 @@
     
   </head>
   <body>
-    <!--
-      This is the body of the page
-      Look at the elements and see how they appear in the rendered page on the right
-      Each element is defined using tags, with < and > indicating where each one opens and closes
-      There are elements for sections of the page, images, text, and more
-      The elements include attributes referenced in the CSS for the page style
-    -->
+    <!-- The Modal -->
+    <div id="rightHandModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2 id="modal-header">Cover your right eye</h2>
+        </div>
+        <div class="modal-body">
+          <p id="pModal">
+            Please cover your RIGHT eye with your palm to continue. You must
+            keep this position during all of the upcoming tests.
+          </p>
+          <img
+            id="imgExplain"
+            src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/cach%C3%A9%20%C5%93uil.gif?v=1651510646487"
+            alt="Covering Eye GIF"
+          />
+        </div>
+        <div class="modal-footer">
+          <p>Press the cross (x) once you're done.</p>
+        </div>
+      </div>
+    </div>
+    
     
     <!-- The wrapper and content divs set margins and positioning -->
     <div class="wrapper">
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
-        <h1 class="title">Your online test of myopia</h1>
-        <h2 class="description">
-          Explanation of myopia
+        <a style="font-size: 50px" class="title" id="title">VeriVue®</a>
+        <h2 class="question" id="instructions">
+          Stand at the given distance depending on the size of your screen and observe the picture.
         </h2>
-        <p>
-          It is a vision disorder that results in blurred distance vision and sharp near vision. To explain it in a technical way, a myopic eye is an eye that is geometrically long. This means that the distance between the cornea and the retina is greater than normal. Myopia can also be due to an eye that is too powerful when the curvature of the cornea is said to be "too strong". This causes light to focus in front of the retina instead of on it, blurring objects in the distance. As a result, visual acuity is diminished. 
-        </p>
-        <div class="distance">
-          <p class="question">
-            Before starting the test, first of all, place yourself at a certain distance from your screen according to its size by following the table below:
+        <img
+          id="amsler_test"
+          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/distance_test.webp?v=1651931914119"
+          width="55%"
+          height="55%"
+        />
+        <!-- Instructions on using this project -->
+        <div class="Answers">
+          <p>
+            <center id="select_answer">Are you able to see clearly lines of letters above the green line ?</center>
           </p>
-          <table align="center">
-            
-            <tr>
-              <th>Size of the screen</th>
-              <td>14 inches</td>
-              <td>15 inches</td>
-              <td>17 inches</td>
-              <td>20 inches</td>
-            </tr>
-            
-            <tr>
-              <th>Distance</th>
-              <td>75 cm</td>
-              <td>1 m</td>
-              <td>1,50 m</td>
-              <td>2,20 m</td>
-            </tr>
-            
-          </table>
+          <div class="buttons">
+            <button id="yes_answer">Yes I can</button>
+
+            <button id="no_answer">No, I can't</button>
+          
+          </div>
+      
         </div>
-        
-        <p>
-          Once you're ready, click on the button "Let's GO" to start the test !
-        </p>
-        <button id = "go">Let's GO</button></a>
       </div>
     </div>
 
