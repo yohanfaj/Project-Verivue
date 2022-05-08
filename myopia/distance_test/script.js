@@ -72,10 +72,10 @@ window.onclick = function (event) {
 
 function changeImage() {
   if (MyopiaImgNumber == 1) {
-    document.getElementById("amsler_test").src =
+    document.getElementById("distance_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
   } else if (MyopiaImgNumber == 2) {
-    document.getElementById("amsler_test").src =
+    document.getElementById("distance_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
     document.body.style.backgroundColor = "#073742";
     document.getElementById("instructions").textContent =
@@ -84,7 +84,7 @@ function changeImage() {
     document.getElementById("instructions").style.color = "white";
     document.getElementById("select_answer").style.color = "white";
   } else if (MyopiaImgNumber == 3) {
-    document.getElementById("amsler_test").src =
+    document.getElementById("distance_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649921187569";
     document.body.style.backgroundColor = "#1f8bb7";
     document.getElementById("title").style.color = "black";
@@ -102,10 +102,10 @@ function changeImage() {
     document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
       "#3f8c75";
   } else if (MyopiaImgNumber == 4) {
-    document.getElementById("amsler_test").src =
+    document.getElementById("distance_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
   } else if (MyopiaImgNumber == 5) {
-    document.getElementById("amsler_test").src =
+    document.getElementById("distance_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
     document.body.style.backgroundColor = "#073742";
     document.getElementById("instructions").textContent =

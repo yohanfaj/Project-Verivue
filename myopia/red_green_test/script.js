@@ -1,49 +1,67 @@
-var isAMD = false;
+// Buttons variables
 var button_enable = true;
 var btn_audio_check = new Audio(
   "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/check_button_audio.mp3?v=1649923001726"
 );
 btn_audio_check.volume = 0.5;
-var amdImgNumber = 0;
+var testSteps = 0;
+
+// Diseases variables
+var myopiaPts = 0;
+var hyperopiaPts = 0;
 
 window.addEventListener("load", load);
 
 function load() {
-  negative_answer_btn.disabled = true;
-  positive_answer_btn.disabled = true;
+  red_answer_btn.disabled = true;
+  green_answer_btn.disabled = true;
+  black_answer_btn.disabled = true;
   document.getElementById("rightHandModal").style.display = "block";
 }
 
-const negative_answer_btn = document.querySelector("#no_answer");
-if (negative_answer_btn) {
-  negative_answer_btn.onclick = function () {
-    amdImgNumber++;
-    isAMD = true;
+const red_answer_btn = document.querySelector("#red_answer");
+if (red_answer_btn) {
+  red_answer_btn.onclick = function () {
+    testSteps++;
+    myopiaPts++;
     btn_audio_check.play();
-    changeImage();
+    nextTestStep();
     disableButtons();
   };
 }
 
-const positive_answer_btn = document.querySelector("#yes_answer");
-if (positive_answer_btn) {
-  positive_answer_btn.onclick = function () {
+const green_answer_btn = document.querySelector("#green_answer");
+if (green_answer_btn) {
+  green_answer_btn.onclick = function () {
     btn_audio_check.play();
-    amdImgNumber++;
-    changeImage();
+    testSteps++;
+    hyperopiaPts++;
+    nextTestStep();
+    disableButtons();
+  };
+}
+
+const black_answer_btn = document.querySelector("#black_answer");
+if (black_answer_btn) {
+  black_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    testSteps++;
+    nextTestStep();
     disableButtons();
   };
 }
 
 function disableButtons() {
-  negative_answer_btn.disabled = true;
-  positive_answer_btn.disabled = true;
+  red_answer_btn.disabled = true;
+  green_answer_btn.disabled = true;
+  black_answer_btn.disabled = true;
   setTimeout(reEnableButtons, 2000);
 }
 
 function reEnableButtons() {
-  negative_answer_btn.disabled = false;
-  positive_answer_btn.disabled = false;
+  red_answer_btn.disabled = false;
+  green_answer_btn.disabled = false;
+  black_answer_btn.disabled = false;
   button_enable = true;
 }
 
@@ -61,29 +79,15 @@ window.onclick = function (event) {
   }
 };
 
-function changeImage() {
-  if (amdImgNumber == 1) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
-  } else if (amdImgNumber == 2) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
-    document.body.style.backgroundColor = "#073742";
-    document.getElementById("instructions").textContent =
-      "Focus on the white dot in the center for 5 seconds, are the lines surrounding it straight?";
-    document.getElementById("title").style.color = "white";
-    document.getElementById("instructions").style.color = "white";
-    document.getElementById("select_answer").style.color = "white";
-  } else if (amdImgNumber == 3) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649921187569";
-    document.body.style.backgroundColor = "#1f8bb7";
-    document.getElementById("title").style.color = "black";
-    document.getElementById("instructions").style.color = "black";
-    document.getElementById("select_answer").style.color = "black";
+
+
+
+function nextTestStep() {
+  if (testSteps == 1) {
     //We reprompt a modified version of the modal.
-    negative_answer_btn.disabled = true;
-    positive_answer_btn.disabled = true;
+    red_answer_btn.disabled = true;
+    green_answer_btn.disabled = true;
+    black_answer_btn.disabled = true;
     document.getElementById("rightHandModal").style.display = "block";
     document.getElementById("modal-header").textContent = "Cover your LEFT eye";
     document.getElementsByClassName("modal-header")[0].style.backgroundColor =
@@ -92,24 +96,19 @@ function changeImage() {
       "Please cover your LEFT eye with your palm to continue. You must keep this position during all of the upcoming tests.";
     document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
       "#3f8c75";
-  } else if (amdImgNumber == 4) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
-  } else if (amdImgNumber == 5) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
-    document.body.style.backgroundColor = "#073742";
-    document.getElementById("instructions").textContent =
-      "Focus on the white dot in the center for 5 seconds, are the lines surrounding it straight?";
-    document.getElementById("title").style.color = "white";
-    document.getElementById("instructions").style.color = "white";
-    document.getElementById("select_answer").style.color = "white";
-  } else {
-    //Here we close the test
-    if (isAMD == true) {
-      document.cookie = "hasAmd=true; path=/";
-    } else {
-      document.cookie = "hasAmd=false; path=/";
+    setTimeout(reEnableButtons, 2000);
+  }
+
+  if (testSteps == 2) {
+    // We close the test
+    if (myopiaPts > hyperopiaPts) {
+      document.cookie = "Myopia Points: " + myopiaPts + ";path=/";
+    }
+    else if (myopiaPts < hyperopiaPts) {
+      document.cookie = "Hyperopia Points: " + hyperopiaPts + ";path=/";
+    }
+    else {
+      document.cookie = "Myopia Points: " + myopiaPts +  " | Hyperopia Points: " + hyperopiaPts + ";path=/";
     }
   }
 }
