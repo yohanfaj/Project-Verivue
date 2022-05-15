@@ -101,14 +101,15 @@ function nextTestStep() {
 
   if (testSteps == 2) {
     // We close the test
-    if (myopiaPts > hyperopiaPts) {
+    if (myopiaPts = 2) {
       document.cookie = "Myopia Points: " + myopiaPts + ";path=/";
     }
-    else if (myopiaPts < hyperopiaPts) {
+    else if (hyperopiaPts = 2) {
       document.cookie = "Hyperopia Points: " + hyperopiaPts + ";path=/";
     }
     else {
       document.cookie = "Myopia Points: " + myopiaPts +  " | Hyperopia Points: " + hyperopiaPts + ";path=/";
     }
+    window.open("/myopia/red_green_test/rg_results.html", "_self")
   }
 }
