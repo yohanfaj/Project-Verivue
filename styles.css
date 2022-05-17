@@ -18,6 +18,19 @@
   display: none !important;
 }
 
+/* Button - Add it from the README instructions */
+button,
+input {
+  font-family: "Tahoma", serif;
+  font-size: 100%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+  cursor: pointer;
+}
 
 @font-face {
   font-family: "Arial";
@@ -27,9 +40,55 @@
 
 
 body {
+  padding:0px;
+  margin:0px;
   font-family: serif;
   background-color: var(--color-bg);
 }
+
+/*We take care of the header*/
+header{
+  background-color: #08698f;
+  width:100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.banderolle{
+  display: inline-block;
+  font-size: medium;
+  color: red;
+}
+
+.title {
+  color: #000000;
+  display:inline-block;
+  font-family: 'Playfair Display SC', serif;
+  font-style: small;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+  vertical-align:center;
+}
+
+#logoVerivue{
+  text-align: center;
+  padding: auto;
+  justify-content: center;
+  height:100%;
+  width:15%;
+  max-width:25%;
+  max-height:10;
+  overflow: hidden;
+  vertical-align:center;
+}
+
+h1 {
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
 
 /* Page structure */
 .wrapper {
@@ -45,55 +104,50 @@ body {
   justify-content: center;
 }
 
-/* Very light scaling for our illustration */
-.title {
-  color: #000000;
-  font-family: 'Playfair Display SC', serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 100px;
-  line-height: 105%;
-  margin: 0;
+
+/*Text over image*/
+.Welcome{
+  font-family: "Tahoma", serif;
+  text-align: center;
+  height:85vh;
+  background-image:linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)),
+    url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/eye-g88d108430_1920.jpg?v=1652775483803");
+  background-size: cover;
+  color: white;
+}
+#slogan{
+  font-size:350%;
+  vertical-align:center;
+  padding-bottom:5%;
+  color:white;
+}
+.Welcome p {
+  color:white;
+  font-size:150%;
+  padding-bottom:5%;
 }
 
-/* Very light scaling for our illustration */
-.illustration {
-  max-width: 100%;
-  max-height: var(--image-max-width);
-  margin-top: var(--image-margin);
+.Welcome button {
+  background: #05800f;
+  height:10vh;
+  width:30vw;
+  font-size:100%;
+  cursor:pointer;
 }
 
+.Welcome button:hover {
+  background: #04b012;
+  height:10vh;
+  font-size:105%;
+  width:30vw;
+}
 /* Instructions */
 .instructions {
   margin: 1rem auto 0;
 }
 
-/* Button - Add it from the README instructions */
-button,
-input {
-  font-family: "Tahoma", serif;
-  font-size: 100%;
-  background: #ffffff;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  transition: 500ms;
-  cursor: pointer;
-}
-
-h1 {
-  font-family: "Tahoma", serif;
-  text-align: center;
-}
-
-/* Subheading */
-
-.Welcome {
-  color: #000000;
-  font-family: "Tahoma", serif;
-  text-align: center;
-}
 
 .Diseases {
   color: #000000;
@@ -102,23 +156,10 @@ h1 {
 }
 
 /* Interactive image */
-.illustration:active {
+#logoVerivue:active {
   transform: translateY(5px);
 }
 
-/* Button dip
-- Toggling this class on and off will move it down and up again
-- The button transition property above determines the speed of the translate (500ms)
-*/
 .dipped {
   transform: translateY(5px);
-}
-
-/* Banderolle Titre */
-.banderolle {
-  padding : 50px 50px 50px 50px;
-  margin : -10px;
-  background-color : red;
-  width : 100%;
-  
 }

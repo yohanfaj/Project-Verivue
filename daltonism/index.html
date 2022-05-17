@@ -1,42 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--
-      This is the page head - it contains info the browser uses to display the page
-      You won't see what's in the head in the page
-      Scroll down to the body element for the page content
-    -->
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://i.imgur.com/0ZQjld2.png" />
+    <!-- Meta tags for SEO and social sharing -->
+    <link rel="canonical" href="https://project-verivue.glitch.me/" />
+    <meta
+      name="description"
+      content="The best eye care solution to diagnotise your vision problems at home !"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="VeriVue®" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://project-verivue.glitch.me/" />
+    <meta
+      property="og:description"
+      content="The best eye care solution to diagnotise your vision problems at home !"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+    />
+    <meta name="twitter:card" content="summary" />
 
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
-    
-    <title>VeriVue® - Daltonism</title>
-<!-- Meta tags for SEO and social sharing -->
-    
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/daltonism/styles.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="/daltonism/script.js" defer></script>
   </head>
   <body>
-    
-    <h1>DALTONISM TEST</h1>
+    <!-- The Modal -->
+    <div id="rightHandModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2 id="modal-header">Cover your right eye</h2>
+        </div>
+        <div class="modal-body">
+          <p id="pModal">
+            Please cover your RIGHT eye with your palm to continue. You must
+            keep this position during all of the upcoming tests.
+          </p>
+          <img
+            id="imgExplain"
+            src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/cach%C3%A9%20%C5%93uil.gif?v=1651510646487"
+            alt="Covering Eye GIF"
+          />
+        </div>
+        <div class="modal-footer">
+          <p>Press the cross (x) once you're done.</p>
+        </div>
+      </div>
+    </div>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page -->
+        <a style="font-size: 50px" class="title" id="title">VeriVue®</a>
+        <h2 class="question" id="instructions">
+          Focus on the black dot in the center for 5 seconds, are the lines
+          surrounding it straight?
+        </h2>
+        <img
+          id="amsler_test"
+          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649921187569"
+          alt="Amsler Test"
+          width="55%"
+          height="55%"
+        />
+        <!-- Instructions on using this project -->
+        <div class="Answers">
+          <p>
+            <center id="select_answer">Select one answer.</center>
+          </p>
+          <button id="yes_answer">Yes, they are straight</button>
 
-    
-    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
+          <button id="no_answer">No, they are slightly deform</button>
+        </div>
+      </div>
+    </div>
   </body>
-  
-  <style>
-    
-    body {
-    background-color: #1f8bb7;
-    font-family: "Arial";
-    font-family-header: "serif";
-    text-align: center
-    }
-
-  </style>
 </html>
-
