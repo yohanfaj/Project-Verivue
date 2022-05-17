@@ -9,7 +9,10 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+    />
 
     <!-- 
       This is an HTML comment
@@ -40,14 +43,28 @@
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Import the webpage's javascript file -->
     <script src="/main_script.js" defer></script>
-    
   </head>
+  <header>
+    <div class="banderolle">
+      <img
+        src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+        id="logoVerivue"
+        alt="Editor illustration"
+        title="Click the image!"
+      />
+      <!-- This is the start of content for our page -->
+      <h1 class="title">VeriVue®</h1>
+    </div>
+  </header>
   <body>
     <!--
       This is the body of the page
@@ -58,44 +75,36 @@
     -->
 
     <!-- The wrapper and content divs set margins and positioning -->
-    <div class="wrapper">
-      <div class="content" role="main">
-        <div class="banderolle">
-          <!-- This is the start of content for our page -->
-        <h1 class="title">VeriVue®</h1>
-        </div>
-        <img
-          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
-        />
-        <!-- Instructions on using this project -->
-        
-        <div class="Welcome">
-          <h2>It's not what you look that matters, it's what you see !</h2>
-          <p>
-            Welcome to <em>VeriVue®</em>, the best solution to diagnotise your
-            vision problems at home ! If you want to check if you're suffering
-            from myopia, AMD, daltonism, or else, <em>VeriVue®</em> will
-            accompany you all throughout the process and deliver the most
-            reliable results possible
-          </p>
-        </div>
-      
+    <div class="content" role="main">
+      <!-- Instructions on using this project -->
+      <div class="Welcome">
+        <h2 id="slogan">It's not what you look that matters, it's what you see !</h2>
+        <p>
+          Welcome to <em>VeriVue®</em>, the best solution to diagnotise your
+          vision problems at home ! If you want to check if you're suffering
+          from myopia, AMD, daltonism, or else, <em>VeriVue®</em> will accompany
+          you all throughout the process and deliver the most reliable results
+          possible
+        </p>
+        <button id="doAllTest">Full vision test</button>
+        <p>
+          Or you can pick a single test below:
+        </p>
+      </div>
 
-        <div class="Diseases">
-          <h2>Click on the eye disease you want to treat below:</h2>
-          <button id="myopia_start">Myopia / Hyperopia</button>
+      <div class="Diseases">
+        <h2>Or you can alternativly choose an individual test:</h2>
+        <button id="myopia_start">Myopia / Hyperopia</button>
 
-          <button id="amd_start">AMD</button>
+        <button id="amd_start">AMD</button>
 
-          <button id="astig_start">Astigmatism</button>
+        <button id="astig_start">Astigmatism</button>
 
-          <button id="dalton_start">Daltonism</button>
-        </div>
+        <button id="dalton_start">Daltonism</button>
       </div>
     </div>
     <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
   </body>
+  <footer>
+  <br><center>(c) Transversal project</center></footer>
 </html>
