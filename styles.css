@@ -18,6 +18,10 @@
   display: none !important;
 }
 
+p{
+  padding:5px;
+}
+
 /* Button - Add it from the README instructions */
 button,
 input {
@@ -48,41 +52,47 @@ body {
 
 /*We take care of the header*/
 header{
-  background-color: #08698f;
-  width:100%;
-  text-align: center;
-  display: inline-block;
+    background-color: #08698f;
+    width:100vw;
+    text-align: center;
+    height: 15vh;
+    display:flex;
+    text-align: center;
+    align-items : center;
+    justify-content:center;
+    vertical-align:center;
 }
 
-.banderolle{
-  display: inline-block;
-  font-size: medium;
-  color: red;
+#logoType{
+    align-items: center;
+    justify-content:center;
+    display: inline-block;
+    text-align: center;
+    width:5%;
+    vertical-align: center;
 }
 
-.title {
+#title {
   color: #000000;
+  text-align: center;
   display:inline-block;
   font-family: 'Playfair Display SC', serif;
-  font-style: small;
-  font-weight: bold;
-  font-size: 100px;
+  font-size: 10vh;
   line-height: 105%;
   margin: 0;
+  align-items: center;
   vertical-align:center;
 }
 
 #logoVerivue{
-  text-align: center;
-  padding: auto;
-  justify-content: center;
-  height:100%;
-  width:15%;
-  max-width:25%;
-  max-height:10;
-  overflow: hidden;
-  vertical-align:center;
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+    width:10vh;
+    vertical-align: center;
 }
+
+/*End of header*/
 
 h1 {
   font-family: "Tahoma", serif;
@@ -133,14 +143,14 @@ h1 {
   background: #05800f;
   height:10vh;
   width:30vw;
-  font-size:100%;
+  font-size:5vh;
   cursor:pointer;
 }
 
 .Welcome button:hover {
   background: #04b012;
   height:10vh;
-  font-size:105%;
+  font-size:4.9vh;
   width:30vw;
 }
 /* Instructions */
@@ -163,3 +173,21 @@ h1 {
 .dipped {
   transform: translateY(5px);
 }
+
+
+footer>#footerLine {
+  border: dotted black 1px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+footer{
+  
+  font-style: italic;
+  color: #000000;
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+

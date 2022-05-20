@@ -10,14 +10,48 @@ var testSteps = 0;
 var myopiaPts = 0;
 var hyperopiaPts = 0;
 
+
+//Cookies management
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+
+
+// SCRIPT
+
 window.addEventListener("load", load);
 
 function load() {
-  red_answer_btn.disabled = true;
-  green_answer_btn.disabled = true;
-  black_answer_btn.disabled = true;
   document.getElementById("rightHandModal").style.display = "block";
 }
+
+// Hidding the modal on Escape or Enter
+
+window.addEventListener("keydown", function(e){
+  if (document.getElementById("rightHandModal").style.display != "none" && (e.key == "Escape" || e.key == "Enter")) {
+      document.getElementById("rightHandModal").style.display = "none";
+  } else if (e.key == "Escape") {
+      document.getElementById("rightHandModal").style.display = "block";
+  }
+});
 
 const red_answer_btn = document.querySelector("#red_answer");
 if (red_answer_btn) {
@@ -50,6 +84,7 @@ if (black_answer_btn) {
     disableButtons();
   };
 }
+
 
 function disableButtons() {
   red_answer_btn.disabled = true;
@@ -101,7 +136,7 @@ function nextTestStep() {
 
   if (testSteps == 2) {
     // We close the test
-    if (myopiaPts = 2) {
+    /*if (myopiaPts = 2) {
       document.cookie = "Myopia Points: " + myopiaPts + ";path=/";
     }
     else if (hyperopiaPts = 2) {
@@ -109,7 +144,33 @@ function nextTestStep() {
     }
     else {
       document.cookie = "Myopia Points: " + myopiaPts +  " | Hyperopia Points: " + hyperopiaPts + ";path=/";
+    }*/
+    
+    // We handle the set of the cookie's result in case of a null score
+    if (myopiaPts === 0)
+      setCookie("Myopia Points", "0", 1);
+    else
+      setCookie("Myopia Points", myopiaPts.toString(), 1);
+    if (hyperopiaPts === 0)
+      setCookie("Hyperopia Points", "0", 1);
+    else
+      setCookie("Hyperopia Points", hyperopiaPts.toString(), 1);
+    
+    if (myopiaPts >= 1)
+      setCookie("hasMyopia", "true", 1);
+    else
+      setCookie("hasMyopia", "false", 1
+               )
+    if (hyperopiaPts >= 1)
+      setCookie("hasHyperopia", "true", 1);
+    else
+      setCookie("hasHyperopa", "false", 1);
+    
+    //Now I decided where I redirect
+    if(getCookie("doAllTests")=="true"){
+      window.open("/results/index.html", "_self"); 
+    } else {
+      window.open("/myopia/red_green_test/rg_results.html", "_self");
     }
-    window.open("/myopia/red_green_test/rg_results.html", "_self")
   }
 }

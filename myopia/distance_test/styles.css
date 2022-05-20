@@ -149,6 +149,7 @@ input {
 
 /* Modal Content */
 .modal-content {
+  text-align: center;
   position: relative;
   background-color: #fefefe;
   margin: auto;

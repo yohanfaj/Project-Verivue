@@ -53,18 +53,18 @@
     <!-- Import the webpage's javascript file -->
     <script src="/main_script.js" defer></script>
   </head>
+  
   <header>
-    <div class="banderolle">
-      <img
-        src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
-        id="logoVerivue"
-        alt="Editor illustration"
-        title="Click the image!"
-      />
-      <!-- This is the start of content for our page -->
-      <h1 class="title">VeriVue®</h1>
-    </div>
+    <img
+      src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+      id="logoVerivue"
+      alt="Editor illustration"
+      title="Click the image!"
+    />
+    <!-- This is the start of content for our page -->
+    <h1 id="title">VeriVue®</h1>
   </header>
+  
   <body>
     <!--
       This is the body of the page
@@ -78,22 +78,22 @@
     <div class="content" role="main">
       <!-- Instructions on using this project -->
       <div class="Welcome">
-        <h2 id="slogan">It's not what you look that matters, it's what you see !</h2>
+        <h2 id="slogan">You'll see, it's better !</h2>
         <p>
           Welcome to <em>VeriVue®</em>, the best solution to diagnotise your
           vision problems at home ! If you want to check if you're suffering
           from myopia, AMD, daltonism, or else, <em>VeriVue®</em> will accompany
           you all throughout the process and deliver the most reliable results
-          possible
+          possible.
         </p>
         <button id="doAllTest">Full vision test</button>
-        <p>
+        <!-- <p>
           Or you can pick a single test below:
-        </p>
+        </p> -->
       </div>
 
       <div class="Diseases">
-        <h2>Or you can alternativly choose an individual test:</h2>
+        <h2>Or you can alternatively choose an individual test:</h2>
         <button id="myopia_start">Myopia / Hyperopia</button>
 
         <button id="amd_start">AMD</button>
@@ -105,6 +105,10 @@
     </div>
     <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
   </body>
+  
   <footer>
-  <br><center>(c) Transversal project</center></footer>
+    <div id="footerLine"></div>
+    © 2022 - VeriVue® Foundation - Efrei Paris's L2 Transversal Project <br>All rights reserved
+  </footer>
+  
 </html>

@@ -26,10 +26,23 @@
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/myopia/red_green_test/styles.css" />
+    <link rel="icon" href="https://i.imgur.com/0ZQjld2.png" />
 
     <!-- Import the webpage's javascript file -->
     <script src="/myopia/red_green_test/script.js" defer></script>
   </head>
+  
+    <header>
+    <img
+      src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+      id="logoVerivue"
+      alt="Editor illustration"
+      title="Click the image!"
+    />
+    <!-- This is the start of content for our page -->
+    <h1 id="title">VeriVue®</h1>
+  </header>
+  
   <body>
     <!-- The Modal -->
     <div id="rightHandModal" class="modal">
@@ -50,7 +63,11 @@
           />
         </div>
         <div class="modal-footer">
-          <p>Press the cross (x) once you're done.</p>
+          <p>
+            <button onclick="document.getElementById('rightHandModal').style.display = 'none';">
+              Close
+            </button> or press the cross (x) once you're done.
+          </p>
         </div>
       </div>
     </div>
@@ -58,7 +75,6 @@
     <div class="wrapper">
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
-        <a style="font-size: 50px" class="title" id="title">VeriVue®</a>
         <h2 class="question" id="instructions">
           Observe for a few seconds the picture on your screen. On which side do you see the letters the darkest ?
         </h2>

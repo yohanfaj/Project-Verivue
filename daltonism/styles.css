@@ -26,7 +26,55 @@
 }
 
 
+/*We take care of the header*/
+header{
+    background-color: #08698f;
+    width:100vw;
+    text-align: center;
+    height: 15vh;
+    display:flex;
+    text-align: center;
+    align-items : center;
+    justify-content:center;
+    vertical-align:center;
+}
+
+#logoType{
+    align-items: center;
+    justify-content:center;
+    display: inline-block;
+    text-align: center;
+    width:5%;
+    vertical-align: center;
+}
+
+#title {
+  color: #000000;
+  text-align: center;
+  display:inline-block;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 10vh;
+  line-height: 105%;
+  margin: 0;
+  align-items: center;
+  vertical-align:center;
+}
+
+#logoVerivue{
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+    width:10vh;
+    vertical-align: center;
+}
+
+/*End of header*/
+
+
+
 body {
+  margin: 0px;
+  padding: 0px;
   font-family: serif;
   background-color: #1f8bb7;
 }
@@ -140,6 +188,7 @@ p{
 
 /* Modal Content */
 .modal-content {
+  text-align: center;
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -173,8 +222,17 @@ p{
 } 
 
 #imgExplain{
-  width: 25%;
+  width: 15%;
   text-align: center;
   margin:auto;
   display:flex;
+}
+
+/* Interactive image */
+#logoVerivue:active {
+  transform: translateY(5px);
+}
+
+.dipped {
+  transform: translateY(5px);
 }

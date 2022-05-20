@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      This is the page head - it contains info the browser uses to display the page
+      You won't see what's in the head in the page
+      Scroll down to the body element for the page content
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+    />
+
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <title>Results | VeriVue®</title>
+
+    <!-- Meta tags for SEO and social sharing -->
+    <link rel="canonical" href="https://project-verivue.glitch.me/" />
+    <meta
+      name="description"
+      content="The best eye care solution to diagnotise your vision problems at home !"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="VeriVue®" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://project-verivue.glitch.me/" />
+    <meta
+      property="og:description"
+      content="The best eye care solution to diagnotise your vision problems at home !"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+  </head>
+  <header>
+    <img
+      src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+      id="logoVerivue"
+      alt="Editor illustration"
+      title="Click the image!"
+    />
+    <!-- This is the start of content for our page -->
+    <h1 class="title">VeriVue®</h1>
+  </header>
+  <body>
+    <!--
+      This is the body of the page
+      Look at the elements and see how they appear in the rendered page on the right
+      Each element is defined using tags, with < and > indicating where each one opens and closes
+      There are elements for sections of the page, images, text, and more
+      The elements include attributes referenced in the CSS for the page style
+    -->
+
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="content" role="main">
+      <!-- Instructions on using this project -->
+      <div id="QuickAnswer">
+        <img
+          id="imageResult"
+          alt="noIssues"
+          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/Ok_Large.png?v=1653055786464"
+        />
+        <h1 id="textualResult">
+          No issues have been found with your eye sight!
+        </h1>
+      </div>
+      <div id="resultZone">
+        <table class="tableResult">
+          <thead>
+            <tr>
+              <th class="mainText">Status</th>
+              <th class="mainText">Disease</th>
+              <th class="mainText">Result</th>
+              <th class="mainText">Ressources</th>
+            </tr><br>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="imgText">
+                <img
+                  class="logoStatus" id="logo1"
+                  src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/tickSymbol.png?v=1653055786013"
+                />
+              </td>
+              <td class="mainText">Myopia</td>
+              <td class="mainText"></td>
+              <td class="buttonToRessource">
+                <a href="https://en.wikipedia.org/wiki/Myopia" target="_blank"
+                  ><button class="smallButtons" type="button">Link</button></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="imgText">
+                <img
+                  class="logoStatus" id="logo2"
+                  src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/tickSymbol.png?v=1653055786013"
+                />
+              </td>
+              <td class="mainText">Hyperopia</td>
+              <td class="mainText"></td>
+              <td class="buttonToRessource">
+                <a
+                  href="https://en.wikipedia.org/wiki/Far-sightedness"
+                  target="_blank"
+                  ><button class="smallButtons" type="button">Link</button></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="imgText">
+                <img
+                  class="logoStatus" id="logo3"
+                  src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/tickSymbol.png?v=1653055786013"
+                />
+              </td>
+              <td class="mainText">AMD</td>
+              <td class="mainText"></td>
+              <td class="buttonToRessource">
+                <a
+                  href="https://en.wikipedia.org/wiki/Macular_degeneration"
+                  target="_blank"
+                  ><button class="smallButtons" type="button">Link</button></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="imgText">
+                <img
+                  class="logoStatus" id="logo4"
+                  src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/tickSymbol.png?v=1653055786013"
+                />
+              </td>
+              <td class="mainText">Astigmatism</td>
+              <td class="mainText"></td>
+              <td class="buttonToRessource">
+                <a
+                  href="https://en.wikipedia.org/wiki/Astigmatism"
+                  target="_blank"
+                  ><button class="smallButtons" type="button">Link</button></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td class="imgText">
+                <img
+                  class="logoStatus" id="logo5"
+                  src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/tickSymbol.png?v=1653055786013"
+                />
+              </td>
+              <td class="mainText">Daltonism</td>
+              <td class="mainText"></td>
+              <td class="buttonToRessource">
+                <a
+                  href="https://en.wikipedia.org/wiki/Color_blindness"
+                  target="_blank"
+                  ><button class="smallButtons" type="button">Link</button></a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table><br>
+            <button id="back_home" onclick="window.open('/','_self')">Return to the main menu</button>
+      </div>
+      <br />
+      <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
+    </div>
+  </body>
+  <footer>
+    <center>(c) Transversal project</center>
+  </footer>
+</html>
