@@ -1,42 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--
-      This is the page head - it contains info the browser uses to display the page
-      You won't see what's in the head in the page
-      Scroll down to the body element for the page content
-    -->
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://i.imgur.com/0ZQjld2.png" />
+    <!-- Meta tags for SEO and social sharing -->
+    <link rel="canonical" href="https://project-verivue.glitch.me/" />
+    <meta
+      name="description"
+      content="The best eye care solution to diagnotise your vision problems at home !"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="VeriVue®" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://project-verivue.glitch.me/" />
+    <meta
+      property="og:description"
+      content="The best eye care solution to diagnotise your vision problems at home !"
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+    />
+    <meta name="twitter:card" content="summary" />
 
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/astigmatism/styles.css" />
+
+    <!-- Import the webpage's javascript file -->
+    <script src="/astigmatism/script.js" defer></script>
     
-    <title>VeriVue® - Astigmatism</title>
+    <title>VeriVue® - Astigmatism Test</title>
 <!-- Meta tags for SEO and social sharing -->
     
   </head>
-  <body>
-    
-    <h1>ASTIGMATISM TEST</h1>
-
-    
-    <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
-  </body>
   
-  <style>
-    
-    body {
-    background-color: #1f8bb7;
-    font-family: "Arial";
-    font-family-header: "serif";
-    text-align: center
-    }
+  
+    <header>
+    <img
+      src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+      id="logoVerivue"
+      alt="Editor illustration"
+      title="Click the image!"
+    />
+    <!-- This is the start of content for our page -->
+    <h1 id="title">VeriVue®</h1>
+  </header>
+  
+  
+  <body>
+    <!-- The Modal -->
+    <div id="rightHandModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2 id="modal-header">Cover your right eye</h2>
+        </div>
+        <div class="modal-body">
+          <p id="pModal">
+            Place yourself at a comfortable distance from the screen. <br>
+            If you have glasses for distance vision or glasses with progressive lenses, keep them on.<br>
+            Without pressing on the eyelid, cover your right eye with your hand.
+          </p>
+          <img
+            id="imgExplain"
+            src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/cach%C3%A9%20%C5%93uil.gif?v=1651510646487"
+            alt="Covering Eye GIF"
+          />
+        </div>
+        <div class="modal-footer">
+          <p>
+            <button onclick="document.getElementById('rightHandModal').style.display = 'none';">
+              Close
+            </button> or press the cross (x) once you're done.
+          </p>
+        </div>
+      </div>
+    </div>
 
-  </style>
+    <!-- The wrapper and content divs set margins and positioning -->
+    <div class="wrapper">
+      <div class="content" role="main">
+        <!-- This is the start of content for our page -->
+        <h2 class="question" id="instructions">
+          Focus on the picture, are some lines getting blurry, darker or sharper?
+        </h2>
+        <img
+          id="astigmatism-test"
+          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/astigmatism-test.png?v=1653051112970"
+          alt="Astigmatism Test"
+          width="55%"
+          height="55%"
+        />
+        <!-- Instructions on using this project -->
+        <div class="Answers">
+          <br>
+            <center id="select_answer">Do you see any line that is darker or sharper ?<br><br>
+          <button id="yes_answer">Yes</button>
+
+          <button id="no_answer">No</button></center><br>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
 

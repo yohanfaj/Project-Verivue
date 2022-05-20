@@ -1,23 +1,55 @@
+//Cookies management
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+//BEGINNING OF SCRIPT
+
 var isMyopia = false;
 var button_enable = true;
 var btn_audio_check = new Audio(
   "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/check_button_audio.mp3?v=1649923001726"
 );
 btn_audio_check.volume = 0.5;
-var MyopiaImgNumber = 0;
+var amdImgNumber = 0;
 
 window.addEventListener("load", load);
 
 function load() {
-  negative_answer_btn.disabled = true;
-  positive_answer_btn.disabled = true;
   document.getElementById("rightHandModal").style.display = "block";
 }
 
-const negative_answer_btn = document.querySelector("#no_answer"); // louis
+// Hidding the modal on Escape or Enter
+
+window.addEventListener("keydown", function(e){
+  if (document.getElementById("rightHandModal").style.display != "none" && (e.key == "Escape" || e.key == "Enter")) {
+      document.getElementById("rightHandModal").style.display = "none";
+  } else if (e.key == "Escape") {
+      document.getElementById("rightHandModal").style.display = "block";
+  }
+});
+
+const negative_answer_btn = document.querySelector("#no_answer");
 if (negative_answer_btn) {
   negative_answer_btn.onclick = function () {
-    MyopiaImgNumber++;
+    amdImgNumber++;
     isMyopia = true;
     btn_audio_check.play();
     changeImage();
@@ -25,22 +57,13 @@ if (negative_answer_btn) {
   };
 }
 
-const positive_answer_btn = document.querySelector("#yes_answer"); // louis
+const positive_answer_btn = document.querySelector("#yes_answer");
 if (positive_answer_btn) {
   positive_answer_btn.onclick = function () {
     btn_audio_check.play();
-    MyopiaImgNumber++;
+    amdImgNumber++;
     changeImage();
     disableButtons();
-  };
-}
-
-const distance_btn = document.querySelector("#go"); // Le bouton lestgo pour démarrer le distance test
-// Detect clicks on the button
-if (distance_btn) {
-  distance_btn.onclick = function () {
-    btn_audio_check.play();
-    window.open("/myopia/distance_test/go.html", "_self");
   };
 }
 
@@ -70,12 +93,23 @@ window.onclick = function (event) {
   }
 };
 
+// Hidding the modal on Escape or Enter
+
+window.addEventListener("keypress", function(e){
+  console.log(e)
+  if (document.getElementById("rightHandModal").style.display != "none") {
+    if (e.key == "Escape" || e.key == "Enter") {
+      document.getElementById("rightHandModal").style.display = "none";
+    }
+  }
+});
+
 function changeImage() {
-  if (MyopiaImgNumber == 1) {
-    document.getElementById("distance_test").src =
+  if (amdImgNumber == 1) {
+    document.getElementById("amsler_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
-  } else if (MyopiaImgNumber == 2) {
-    document.getElementById("distance_test").src =
+  } else if (amdImgNumber == 2) {
+    document.getElementById("amsler_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
     document.body.style.backgroundColor = "#073742";
     document.getElementById("instructions").textContent =
@@ -83,8 +117,8 @@ function changeImage() {
     document.getElementById("title").style.color = "white";
     document.getElementById("instructions").style.color = "white";
     document.getElementById("select_answer").style.color = "white";
-  } else if (MyopiaImgNumber == 3) {
-    document.getElementById("distance_test").src =
+  } else if (amdImgNumber == 3) {
+    document.getElementById("amsler_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649921187569";
     document.body.style.backgroundColor = "#1f8bb7";
     document.getElementById("title").style.color = "black";
@@ -101,11 +135,11 @@ function changeImage() {
       "Please cover your LEFT eye with your palm to continue. You must keep this position during all of the upcoming tests.";
     document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
       "#3f8c75";
-  } else if (MyopiaImgNumber == 4) {
-    document.getElementById("distance_test").src =
+  } else if (amdImgNumber == 4) {
+    document.getElementById("amsler_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
-  } else if (MyopiaImgNumber == 5) {
-    document.getElementById("distance_test").src =
+  } else if (amdImgNumber == 5) {
+    document.getElementById("amsler_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
     document.body.style.backgroundColor = "#073742";
     document.getElementById("instructions").textContent =
@@ -116,9 +150,16 @@ function changeImage() {
   } else {
     //Here we close the test
     if (isMyopia == true) {
-      document.cookie = "hasMyopia=true; path=/";
+      setCookie("hasMyopia","true",1);
     } else {
-      document.cookie = "hasMyopia=false; path=/";
+      setCookie("hasMyopia","false",1);
+    }
+    //Now I decided where I redirect
+    if(getCookie("doAllTests")=="true"){
+      window.open("/astigmatism", "_self");
+    } else {
+      window.open("/amd/amd_results.html", "_self");
     }
   }
 }
+

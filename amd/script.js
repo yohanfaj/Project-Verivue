@@ -33,8 +33,6 @@ var amdImgNumber = 0;
 window.addEventListener("load", load);
 
 function load() {
-  negative_answer_btn.disabled = true;
-  positive_answer_btn.disabled = true;
   document.getElementById("rightHandModal").style.display = "block";
 }
 
@@ -84,6 +82,16 @@ window.onclick = function (event) {
     setTimeout(reEnableButtons, 2000);
   }
 };
+
+// Hidding the modal on Escape or Enter
+
+window.addEventListener("keydown", function(e){
+  if (document.getElementById("rightHandModal").style.display != "none" && (e.key == "Escape" || e.key == "Enter")) {
+      document.getElementById("rightHandModal").style.display = "none";
+  } else if (e.key == "Escape") {
+      document.getElementById("rightHandModal").style.display = "block";
+  }
+});
 
 function changeImage() {
   if (amdImgNumber == 1) {
@@ -139,7 +147,7 @@ function changeImage() {
     if(getCookie("doAllTests")=="true"){
       window.open("/astigmatism", "_self");
     } else {
-      window.open("result/", "_self");
+      window.open("/amd/amd_results.html", "_self");
     }
   }
 }

@@ -22,17 +22,14 @@
       content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
     />
     <meta name="twitter:card" content="summary" />
-    
-    <title>VeriVue® - Red Green Test - Results</title>
-    <link rel="icon" href="https://i.imgur.com/0ZQjld2.png" />
 
     <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/myopia/red_green_test/rg_results.css" />
+    <link rel="stylesheet" href="/astigmatism/result/styles.css" />
+    <link rel="icon" href="https://i.imgur.com/0ZQjld2.png" />
 
     <!-- Import the webpage's javascript file -->
-    <script src="/myopia/red_green_test/rg_results.js" defer></script>
+    <script src="/astigmatism/result/script.js" defer></script>
   </head>
-  
   
     <header>
     <img
@@ -52,39 +49,24 @@
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
         <div class="banderolle">
+            <!-- This is the start of content for our page -->
 
-        <h1> Red Green Test - Results </h1>
+        <h1> Astigmatism - Results </h1>
         <div class="Calculation">
-          <h3>
-            The results of the Red Green Test are calculated as the following:<br>
-            <ul>
-              <li>One "RED side" button clicked = +1 Myopia Point,</li>
-              <li>One "GREEN side" button clicked = +1 Hyperopia Point,</li>
-              <li>One "No differences" button clicked = +0 Point at all.</li>
-            </ul>
-          </h3>
+          <h2 id="result-title">
+          </h2>
       </div>
 
         <div class="Results">
-          <h2 id="Myopia_results">
-            You have obtained <span id="myopiaToInsert"></span> Myopia Points.
-          </h2>
-
-          <h2 id="Hyperopia_results">
-            You have obtained <span id="hyperopiaToInsert"></span> Hyperopia Points.
+          <h2 id="AstigmatismResults">
           </h2>
         </div>
 
-        <h2>Conclusion of your test: </h2>
-        <p id="Conclusion">
-        <!-- The conclusion is appended through the JS script, depending on the obtained number of points -->
-        </p>
-
         <div class="Redirection">
           <h2>What do you want to do now ?</h2>
-            <button id="details">Read further details about <br>Myopia/Hyperopia</button>
+            <button id="details">Read further details about <br>Astigmatism</button>
 
-            <button id="distance_start">Try the <br>Distance Test</button>
+            <button id="daltonism_start">Try the <br>Daltonism Test</button>
 
             <button id="back_home">Return to <br>the main menu</button>
         </div>
