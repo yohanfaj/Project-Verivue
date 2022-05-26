@@ -15,10 +15,10 @@
       This is an HTML comment
       You can write text in a comment and the content won't be visible in the page
     -->
-    
+
     <title>VeriVue® - Distance Test</title>
-    
-<!-- Meta tags for SEO and social sharing -->
+
+    <!-- Meta tags for SEO and social sharing -->
     <link rel="canonical" href="https://project-verivue.glitch.me/" />
     <meta
       name="description"
@@ -43,7 +43,6 @@
 
     <!-- Import the webpage's javascript file -->
     <script src="/myopia/distance_test/script.js" defer></script>
-    
   </head>
   <body>
     <!-- The Modal -->
@@ -52,68 +51,62 @@
       <div class="modal-content">
         <div class="modal-header">
           <span class="close">&times;</span>
-          <h2 id="modal-header">Specifications before starting</h2>
+          <h2 id="modal-header">Cover now your LEFT eye</h2>
         </div>
         <div class="modal-body">
-          <p>The distance at which to perform the test depends on the size and resolution of your screen. You must therefore calibrate the test layout.</p>
-          <p>To do this, first measure the length of the red figure below on your screen:</p>
-          
-          <img src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/lignerouge.png?1653055066100"> 
-          <p>Multiply the result by 100 and position yourself at this distance from your screen.</p>
-          <p><strong>Example:</strong> measured length = 42 mm, test distance = 42mm x 100 = 4200mm = 4.2 meters.</p>
-          
           <p id="pModal">
-            Please cover your RIGHT eye with your palm to continue. You must
+            Please cover your <strong>LEFT</strong>eye with your palm to continue. You must
             keep this position during all of the upcoming tests.
           </p>
-          <img 
+          <img
             id="imgExplain"
-            src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/cach%C3%A9%20%C5%93uil.gif?v=1651510646487"
+            src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/cach%C3%A9_%C5%93uil_reversed.gif?v=1653229472826"
             alt="Covering Eye GIF"
           />
         </div>
         <div class="modal-footer">
-          <p>Press the cross (x) once you're done.</p>
+          <p>
+            <button
+              onclick="document.getElementById('rightHandModal').style.display = 'none';"
+            >
+              Close
+            </button>
+            or press the cross (x) once you're done.
+          </p>
         </div>
       </div>
     </div>
-    
+
     <!-- The wrapper and content divs set margins and positioning -->
     <div class="wrapper">
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
         <a style="font-size: 50px" class="title" id="title">VeriVue®</a>
         <h2 class="question" id="instructions">
-          Stand at the given distance depending on the size of your screen and observe the picture.
+          stand at the distance you have calculated and look at the image
         </h2>
         <img
           id="distance_test"
-          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/distance_test-transformed.jpeg?v=1651979912531"
-          width="55%"
-          height="55%"
+          src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/distance-test-off%20(2).png?v=1653063724218"
         />
         <!-- Instructions on using this project -->
         <div class="Answers">
           <p>
-            <center id="select_answer">Are you able to see clearly lines of letters above the green line ?</center>
+            <center id="select_answer">
+              What is the number of the last line you can see clearly?
+            </center>
           </p>
           <div class="buttons">
-            
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            
-            
-            <button id="yes_answer">Yes I can</button>
-            <button id="no_answer">No, I can't</button>
-          
+            <button id="one_right">1</button>
+            <button id="two_right">2</button>
+            <button id="three_right">3</button>
+            <button id="four_right">4</button>
+            <button id="five_right">5</button>
+            <button id="six_right">6</button>
+            <button id="seven_right">7</button>
+            <button id="eight_right">8</button>
+
           </div>
-      
         </div>
       </div>
     </div>

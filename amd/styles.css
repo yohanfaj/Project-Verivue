@@ -76,6 +76,7 @@ header{
 body {
   margin: 0px;
   padding: 0px;
+  padding-bottom:10px;
   font-family: serif;
   background-color: #1f8bb7;
 }

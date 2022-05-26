@@ -123,6 +123,7 @@ function nextTestStep() {
     red_answer_btn.disabled = true;
     green_answer_btn.disabled = true;
     black_answer_btn.disabled = true;
+    document.getElementById("imgExplain").style = "transform: scaleX(-1);"
     document.getElementById("rightHandModal").style.display = "block";
     document.getElementById("modal-header").textContent = "Cover your LEFT eye";
     document.getElementsByClassName("modal-header")[0].style.backgroundColor =
@@ -168,7 +169,7 @@ function nextTestStep() {
     
     //Now I decided where I redirect
     if(getCookie("doAllTests")=="true"){
-      window.open("/results/index.html", "_self"); 
+      window.open("/amd", "_self"); 
     } else {
       window.open("/myopia/red_green_test/rg_results.html", "_self");
     }

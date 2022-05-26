@@ -107,6 +107,7 @@ function changeImage() {
     document.getElementById("instructions").style.color = "white";
     document.getElementById("select_answer").style.color = "white";
   } else if (amdImgNumber == 3) {
+    document.getElementById("imgExplain").style = "transform: scaleX(-1);"
     document.getElementById("amsler_test").src =
       "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649921187569";
     document.body.style.backgroundColor = "#1f8bb7";

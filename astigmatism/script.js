@@ -58,6 +58,11 @@ if (negative_answer_btn) {
       document.getElementById("pModal").innerHTML = `Place yourself at a comfortable distance from the screen. <br>
             If you have glasses for distance vision or glasses with progressive lenses, keep them on.<br>
             Without pressing on the eyelid, cover your left eye with your hand.`
+      document.getElementsByClassName("modal-header")[0].style.backgroundColor =
+        "#0e664c";
+      document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
+      "#3f8c75";
+      document.getElementById("imgExplain").style = "transform: scaleX(-1);"
       document.getElementById("rightHandModal").style.display = "block";
     } else if (step == 2) {
       setCookie("isAstigmateRight","false",1)
@@ -65,6 +70,12 @@ if (negative_answer_btn) {
       document.getElementById("pModal").innerHTML = `Place yourself at a comfortable distance from the screen. <br>
             If you have glasses for distance vision or glasses with progressive lenses, keep them on.<br>
             Uncover both of your eyes.`
+      document.getElementsByClassName("modal-header")[0].style.backgroundColor =
+        "#ff9933";
+      document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
+      "#ff9933";
+      document.getElementById("imgExplain").src = "https://c.tenor.com/_7UvW84LwaAAAAAC/blinking-eyes-huh.gif";
+      document.getElementById("imgExplain").style = "";
       document.getElementById("rightHandModal").style.display = "block";
     } else if (step == 3) {
       setCookie("isAstigmateBoth","false",1)
@@ -86,6 +97,11 @@ if (positive_answer_btn) {
       document.getElementById("pModal").innerHTML = `Place yourself at a comfortable distance from the screen. <br>
             If you have glasses for distance vision or glasses with progressive lenses, keep them on.<br>
             Without pressing on the eyelid, cover your left eye with your hand.`
+      document.getElementsByClassName("modal-header")[0].style.backgroundColor =
+        "#0e664c";
+      document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
+      "#3f8c75";
+      document.getElementById("imgExplain").style = "transform: scaleX(-1);"
       document.getElementById("rightHandModal").style.display = "block";
     } else if (step == 2) {
       setCookie("isAstigmateRight","true",1)
@@ -93,6 +109,12 @@ if (positive_answer_btn) {
       document.getElementById("pModal").innerHTML = `Place yourself at a comfortable distance from the screen. <br>
             If you have glasses for distance vision or glasses with progressive lenses, keep them on.<br>
             Uncover both of your eyes.`
+      document.getElementsByClassName("modal-header")[0].style.backgroundColor =
+        "#ff9933";
+      document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
+      "#ff9933";
+      document.getElementById("imgExplain").src = "https://c.tenor.com/_7UvW84LwaAAAAAC/blinking-eyes-huh.gif";
+      document.getElementById("imgExplain").style = ""
       document.getElementById("rightHandModal").style.display = "block";
     } else if (step == 3) {
       setCookie("isAstigmateBoth","true",1)

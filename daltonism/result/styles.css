@@ -18,39 +18,12 @@
   display: none !important;
 }
 
-p{
-  padding:5px;
-}
-
-/* Button - Add it from the README instructions */
-button,
-input {
-  font-family: "Tahoma", serif;
-  font-size: 100%;
-  background: #ffffff;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  transition: 500ms;
-  cursor: pointer;
-}
-
 @font-face {
   font-family: "Arial";
   src: url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/ARIAL.TTF")
     format ("ttf");
 }
 
-
-body {
-  padding:0px;
-  margin:0px;   
-  width:100vw;
-  font-family: serif;
-  background-color: var(--color-bg);
-  overflow-x: hidden;
-}
 
 /*We take care of the header*/
 header{
@@ -65,6 +38,14 @@ header{
     vertical-align:center;
 }
 
+#logoType{
+    align-items: center;
+    justify-content:center;
+    display: inline-block;
+    text-align: center;
+    width:5%;
+    vertical-align: center;
+}
 
 #title {
   color: #000000;
@@ -88,11 +69,13 @@ header{
 
 /*End of header*/
 
-h1 {
-  font-family: "Tahoma", serif;
-  text-align: center;
-}
 
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: serif;
+  background-color: #1f8bb7;
+}
 
 /* Page structure */
 .wrapper {
@@ -108,60 +91,77 @@ h1 {
   justify-content: center;
 }
 
+/* Very light scaling for our illustration */
+.title {
+  color: #000000;
+  font-family: "Playfair Display SC", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+}
 
-/*Text over image*/
-.Welcome{
-  margin:0px;
-  padding:0px;
+/* Very light scaling for our illustration */
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
+}
+
+
+
+/* Button - Add it from the README instructions */
+button,
+input {
+  font-family: "Tahoma", serif;
+  font-size: 100%;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+h1, h2, h3 {
   font-family: "Tahoma", serif;
   text-align: center;
-  width:100vw;
-  height:85vh;
-  background-image:linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)),
-    url("https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/eye-g88d108430_1920.jpg?v=1652775483803");
-  background-size: cover;
-  color: white;
-}
-#slogan{
-  font-size:350%;
-  vertical-align:center;
-  padding-bottom:5%;
-  color:white;
-}
-.Welcome p {
-  color:white;
-  margin:0px;
-  padding:0px;
-  font-size:150%;
-  padding-bottom:5%;
-}
-
-.Welcome button {
-  background: #05800f;
-  height:10vh;
-  width:30vw;
-  font-size:5vh;
-  cursor:pointer;
-}
-
-.Welcome button:hover {
-  background: #04b012;
-  height:10vh;
-  font-size:4.9vh;
-  width:30vw;
-}
-/* Instructions */
-.instructions {
-  margin: 1rem auto 0;
 }
 
 
-.Diseases {
+p {
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+/* Subheading */
+.Redirection {
   color: #000000;
   font-family: "Tahoma", serif;
   text-align: center;
+  font-size: 20px;
+}
+
+.buttons {
+  color: #000000;
+  font-family: "Tahoma", serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 /* Interactive image */
@@ -172,22 +172,3 @@ h1 {
 .dipped {
   transform: translateY(5px);
 }
-
-
-footer>#footerLine {
-  border: dotted black 1px;
-  margin-top: 20px;
-  width:100vw;
-  margin-bottom: 10px;
-}
-
-
-footer{
-  width:100vw;
-  font-style: italic;
-  color: #000000;
-  font-family: "Tahoma", serif;
-  text-align: center;
-}
-
-
