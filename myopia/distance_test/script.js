@@ -20,21 +20,28 @@ function getCookie(name) {
     return null;
 }
 
+
+
 //BEGINNING OF SCRIPT
 
 var isMyopia = false;
 var button_enable = true;
+var myopia_left;
+var myopia_right;
 var btn_audio_check = new Audio(
   "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/check_button_audio.mp3?v=1649923001726"
 );
 btn_audio_check.volume = 0.5;
-var amdImgNumber = 0;
+var amdImgNumber = 0; // louis (à supp après)
 
 window.addEventListener("load", load);
 
 function load() {
   document.getElementById("rightHandModal").style.display = "block";
 }
+
+
+
 
 // Hidding the modal on Escape or Enter
 
@@ -46,38 +53,228 @@ window.addEventListener("keydown", function(e){
   }
 });
 
-const negative_answer_btn = document.querySelector("#no_answer");
-if (negative_answer_btn) {
-  negative_answer_btn.onclick = function () {
-    amdImgNumber++;
-    isMyopia = true;
+
+
+
+// Modèle Louis ( à supprimer après )
+
+
+
+
+
+
+// Les 8 boutons pour l'oeil gauche (close RIGHT eye)
+
+const one_left_answer_btn = document.querySelector("#one_left");
+if (one_left_answer_btn) {
+  one_left_answer_btn.onclick = function () {
     btn_audio_check.play();
-    changeImage();
+    myopia_left= 0.1;
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const two_left_answer_btn = document.querySelector("#two_left");
+if (two_left_answer_btn) {
+  two_left_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_left= 0.2;
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const three_left_answer_btn = document.querySelector("#three_left");
+if (three_left_answer_btn) {
+  three_left_answer_btn.onclick = function () {
+    myopia_left= 0.3;
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const four_left_answer_btn = document.querySelector("#four_left");
+if (four_left_answer_btn) {
+  four_left_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_left= 0.4;
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const five_left_answer_btn = document.querySelector("#five_left");
+if (five_left_answer_btn) {
+  five_left_answer_btn.onclick = function () {
+    myopia_left= 0.6;
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const six_left_answer_btn = document.querySelector("#six_left");
+if (six_left_answer_btn) {
+  six_left_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_left= 0.8;
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const seven_left_answer_btn = document.querySelector("#seven_left");
+if (seven_left_answer_btn) {
+  seven_left_answer_btn.onclick = function () {
+    myopia_left= 1.0;
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/index2.html", "_self");
+    disableButtons();
+  };
+}
+const eight_left_answer_btn = document.querySelector("#eight_left");
+if (eight_left_answer_btn) {
+  eight_left_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_left= 1.2;
+    window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
   };
 }
 
-const positive_answer_btn = document.querySelector("#yes_answer");
-if (positive_answer_btn) {
-  positive_answer_btn.onclick = function () {
+
+// Les 8 boutons pour l'oeil droit (close LEFT eye)
+
+const one_right_answer_btn = document.querySelector("#one_right");
+if (one_right_answer_btn) {
+  one_right_answer_btn.onclick = function () {
     btn_audio_check.play();
-    amdImgNumber++;
-    changeImage();
+    myopia_right= 0.1;
+    window.open("/myopia/distance_test/results.html", "_self");
     disableButtons();
   };
 }
+const two_right_answer_btn = document.querySelector("#two_right");
+if (two_right_answer_btn) {
+  two_right_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_right= 0.2;
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+const three_right_answer_btn = document.querySelector("#three_right");
+if (three_right_answer_btn) {
+  three_right_answer_btn.onclick = function () {
+    myopia_right= 0.3;
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+const four_right_answer_btn = document.querySelector("#four_right");
+if (four_right_answer_btn) {
+  four_right_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_right= 0.4;
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+const five_right_answer_btn = document.querySelector("#five_right");
+if (five_right_answer_btn) {
+  five_right_answer_btn.onclick = function () {
+    myopia_right= 0.6;
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+const six_right_answer_btn = document.querySelector("#six_right");
+if (six_right_answer_btn) {
+  six_right_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_right= 0.8;
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+const seven_right_answer_btn = document.querySelector("#seven_right");
+if (seven_right_answer_btn) {
+  seven_right_answer_btn.onclick = function () {
+    myopia_right= 1.0;
+    btn_audio_check.play();
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+const eight_right_answer_btn = document.querySelector("#eight_right");
+if (eight_right_answer_btn) {
+  eight_right_answer_btn.onclick = function () {
+    btn_audio_check.play();
+    myopia_right= 1.2;
+    window.open("/myopia/distance_test/results.html", "_self");
+    disableButtons();
+  };
+}
+
+
+
+
+
+
+
+
+
 
 function disableButtons() {
-  negative_answer_btn.disabled = true;
-  positive_answer_btn.disabled = true;
+  
+  
+  one_left_answer_btn.disabled = true;
+  two_left_answer_btn.disabled = true;
+  three_left_answer_btn.disabled = true;
+  four_left_answer_btn.disabled = true;
+  five_left_answer_btn.disabled = true;
+  six_left_answer_btn.disabled = true;
+  seven_left_answer_btn.disabled = true;
+  eight_left_answer_btn.disabled = true;
+  
+  one_right_answer_btn.disabled = true;
+  two_right_answer_btn.disabled = true;
+  three_right_answer_btn.disabled = true;
+  four_right_answer_btn.disabled = true;
+  five_right_answer_btn.disabled = true;
+  six_right_answer_btn.disabled = true;
+  seven_right_answer_btn.disabled = true;
+  eight_right_answer_btn.disabled = true;
+  
   setTimeout(reEnableButtons, 2000);
 }
 
 function reEnableButtons() {
-  negative_answer_btn.disabled = false;
-  positive_answer_btn.disabled = false;
+
+  
+  one_left_answer_btn.disabled = false;
+  two_left_answer_btn.disabled = false;
+  three_left_answer_btn.disabled = false;
+  four_left_answer_btn.disabled = false;
+  five_left_answer_btn.disabled = false;
+  six_left_answer_btn.disabled = false;
+  seven_left_answer_btn.disabled = false;
+  eight_left_answer_btn.disabled = false;
+  
+  one_right_answer_btn.disabled = false;
+  two_right_answer_btn.disabled = false;
+  three_right_answer_btn.disabled = false;
+  four_right_answer_btn.disabled = false;
+  five_right_answer_btn.disabled = false;
+  six_right_answer_btn.disabled = false;
+  seven_right_answer_btn.disabled = false;
+  eight_right_answer_btn.disabled = false;
+  
   button_enable = true;
 }
+
+
+
+
+
 
 // Open the first modal on startup
 document.getElementsByClassName("close")[0].onclick = function enableButton() {
@@ -104,6 +301,8 @@ window.addEventListener("keypress", function(e){
   }
 });
 
+
+/* LOUIS
 function changeImage() {
   if (amdImgNumber == 1) {
     document.getElementById("amsler_test").src =
@@ -125,8 +324,6 @@ function changeImage() {
     document.getElementById("instructions").style.color = "black";
     document.getElementById("select_answer").style.color = "black";
     //We reprompt a modified version of the modal.
-    negative_answer_btn.disabled = true;
-    positive_answer_btn.disabled = true;
     document.getElementById("rightHandModal").style.display = "block";
     document.getElementById("modal-header").textContent = "Cover your LEFT eye";
     document.getElementsByClassName("modal-header")[0].style.backgroundColor =
@@ -156,10 +353,54 @@ function changeImage() {
     }
     //Now I decided where I redirect
     if(getCookie("doAllTests")=="true"){
-      window.open("/astigmatism", "_self");
+      window.open("/myopia/red_green_test/index.html", "_self");
     } else {
       window.open("/amd/amd_results.html", "_self");
     }
   }
 }
+*/
 
+
+
+if (myopia_left === 0){
+  setCookie("myopia_left", "0", 1);
+}else{
+  setCookie("myopia_left", myopia_left.toString(), 1)
+}
+
+
+if (myopia_right === 0){
+  setCookie("myopia_right", "0", 1);
+}else{
+  setCookie("myopia_right", myopia_right.toString(), 1)
+}
+
+
+
+
+if(myopia_left < 1.0){
+  setCookie("hasMyopiaLeftD", "true", 1);
+}else{
+  setCookie("hasMyopiaLeftD", "false", 1);
+}
+
+if(myopia_right < 1.0){
+  setCookie("hasMyopiaRightD", "true", 1);
+}else{
+  setCookie("hasMyopiaRightD", "false", 1);
+}
+
+
+
+
+// Redirection
+if(getCookie("doAllTests")=="true"){
+  window.open("/red_green_test", "_self"); 
+}else{
+  window.open("/myopia/distance_test/results.html", "_self");
+}
+
+      
+      
+      

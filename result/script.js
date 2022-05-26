@@ -34,5 +34,29 @@ window.onload = function() {
   }
   
   //Individual specification
+  
+  //Astigmatism
+if (getCookie("isAstigmate")=="true") {
+  if (getCookie("isAstigmateBoth")=="true") {
+    document.getElementById("AstigmatismResult").textContent = "You seem to have astigmatism";
+    if (getCookie("isAstigmateRight")=="true" && getCookie("isAstigmateLeft")=="true") {
+      document.getElementById("AstigmatismResult").textContent += " on both of your eyes.";
+    } else if (getCookie("isAstigmateRight")=="true") {
+      document.getElementById("AstigmatismResult").textContent += " on your right eye.";
+    } else if (getCookie("isAstigmateLeft")=="true") {
+      document.getElementById("AstigmatismResult").textContent += " on your left eye.";
+    }
+  } else {
+    if (getCookie("isAstigmateRight")=="true") {
+      document.getElementById("AstigmatismResult").textContent = "You seem to have astigmatism on your right eye.";
+    } else if (getCookie("isAstigmateLeft")=="true") {
+      document.getElementById("AstigmatismResult").textContent = "You seem to have astigmatism on your left eye.";
+    }
+  }
+} else {
+  document.getElementById("AstigmatismResult").textContent = "Negative";
+}
+  
+  
 };
 
