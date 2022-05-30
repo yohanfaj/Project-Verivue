@@ -59,7 +59,7 @@ if (doAllTest) {
   doAllTest.onclick = function () {
     setCookie("doAllTests","true",1);
     btn_audio_check.play();
-    window.open("/myopia/distance_test/index.html", "_self");
+    window.open("/amd", "_self");
   };
 }
 

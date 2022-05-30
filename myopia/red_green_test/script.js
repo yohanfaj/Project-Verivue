@@ -169,7 +169,7 @@ function nextTestStep() {
     
     //Now I decided where I redirect
     if(getCookie("doAllTests")=="true"){
-      window.open("/amd", "_self"); 
+      window.open("/result", "_self"); 
     } else {
       window.open("/myopia/red_green_test/rg_results.html", "_self");
     }

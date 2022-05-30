@@ -48,11 +48,11 @@ if (home_btn) {
 
 
 if (getCookie("hasRGdef")=="true") {
-  document.getElementById("result-title").textContent = "Positive, you have a Red-Green deficiency";
+  document.getElementById("result-title").textContent = "POSITIVE - You seem to suffer from a RED-GREEN deficiency.";
 } else if (getCookie("hasRdef")=="true") {
-  document.getElementById("AstigmatismResults").textContent = "Positive, you have a Red deficiency";
+  document.getElementById("DaltonismResults").textContent = "POSITIVE -  You seem to suffer from a RED deficiency.";
 } else if (getCookie("hasGdef")=="true") {
-  document.getElementById("AstigmatismResults").textContent = "Positive, you have a Green deficiency";
+  document.getElementById("DaltonismResults").textContent = "POSITIVE - You seem to suffer from a GREEN deficiency.";
 } else {
-  document.getElementById("AstigmatismResults").textContent = "Negative";
+  document.getElementById("DaltonismResults").textContent = "NEGATIVE - You do not seem tu suffer from any form of daltonism.";
 }
