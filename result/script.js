@@ -33,7 +33,8 @@ window.onload = function() {
     document.getElementById("textualResult").style.color = "#c93e51";
   }
   
-  //Individual specification
+  
+  //INDIVIDUAL SPECIFICATION
   
   //Astigmatism
 if (getCookie("isAstigmate")=="true") {
@@ -48,14 +49,34 @@ if (getCookie("isAstigmate")=="true") {
     }
   } else {
     if (getCookie("isAstigmateRight")=="true") {
+      document.getElementById("logo4").src = urlWarning;
       document.getElementById("AstigmatismResult").textContent = "You seem to have astigmatism on your right eye.";
     } else if (getCookie("isAstigmateLeft")=="true") {
+      document.getElementById("logo4").src = urlWarning;
       document.getElementById("AstigmatismResult").textContent = "You seem to have astigmatism on your left eye.";
     }
   }
 } else {
   document.getElementById("AstigmatismResult").textContent = "Negative";
 }
+  //AMD
+  if(getCookie("hasAMD")=="true"){
+    document.getElementById("AMDtestResult").textContent = "If you are over 50, please see an ophtamologist urgently.";
+  }
+  
+  
+  //Hyperopia
+  if(getCookie("Hyperopia Points") == "0"){
+    document.getElementById("hyperopiaResults").textContent = "NO Hyperopia";
+  }
+  else if (getCookie("Hyperopia Points") == "1"){
+    document.getElementById("logo2").src = urlWarning;
+    document.getElementById("hyperopiaResults").textContent = "SLIGHT Hyperopia";
+  }
+  else if (getCookie("Hyperopia Points") == "2"){
+    document.getElementById("logo2").src = urlBad;
+    document.getElementById("hyperopiaResults").textContent = "HEAVY Hyperopia";
+  }
   
   
 };

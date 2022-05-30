@@ -65,7 +65,7 @@ input.addEventListener("keyup", (event) => {
       send_check = textBox.value;
   if (send_check == "") {
     textBox.style.borderColor = "red";
-    alert("Please click 'I don't see any colours' if you don't see anything");
+    alert("Please click 'I don't see any number' if you don't see anything");
     return;
   }
   textBox.style.borderColor = "black";
@@ -78,7 +78,7 @@ send.onclick = function () {
   send_check = textBox.value;
   if (send_check == "") {
     textBox.style.borderColor = "red";
-    alert("Please click 'I don't see any colours' if you don't see anything");
+    alert("Please click 'I don't see any number' if you don't see anything");
     return;
   }
   textBox.style.borderColor = "black";
@@ -103,6 +103,10 @@ function checkAnswer(userIn) {
       RedGreenDeficiencies = true;
     }
   } else if (amdImgNumber == 3) {
+    if(userIn != "noColor"){
+      RedGreenDeficiencies = true;
+    }
+    
   }
   //This bit of code should run in ALL cases
   textBox.value = "";
@@ -148,7 +152,7 @@ function changeImage() {
     else setCookie("hasDaltonism", "false", 1);
     //Now I decided where I redirect
     if (getCookie("doAllTests") == "true") {
-      window.open("/result/index.html", "_self");
+      window.open("/myopia/distance_test/", "_self");
     } else {
       window.open("/daltonism/result/index.html", "_self");
     }

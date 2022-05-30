@@ -55,25 +55,58 @@ if (home_btn) {
 }
 
 // GETTING RESULTS
-var myopia_left = getCookie("myopia_left");
-var myopia_right = getCookie("myopia_right");
+//var myopia_left = getCookie("myopia_left");
+//var myopia_right = getCookie("myopia_right");
 
 
-document.getElementById("myopia_leftToInsert").textContent = myopia_left;
-document.getElementById("myopia_rightToInsert").textContent = myopia_right;
 
 
 // DISPLAYING THE PARAGRAPH RESULTS
 
-if (myopia_left >= "1.0" && myopia_right >= "1.0"){
-  document.getElementById("Conclusion").textContent = "You do not suffer from myopia !";
-}else if(myopia_left < "1.0" && myopia_right >= "1.0"){
-  document.getElementById("Conclusion").textContent = "You do suffer from myopia from your right eye !";
-}else if(myopia_right < "1.0" && myopia_left >= "1.0"){
-  document.getElementById("Conclusion").textContent = "You do suffer from myopia from your left eye !";
-}else if(myopia_right < "1.0" && myopia_left < "1.0"){
-  document.getElementById("Conclusion").textContent = "You do suffer from myopia from your both eye !";
+if(getCookie("isMyopiaRight")=="true"){
+  document.getElementById("MyopiaResults").textContent = "Your right eye suffer from myopia";
+}else if(getCookie("isMyopiaLeft")=="true"){
+  document.getElementById("MyopiaResults").textContent = "Your left eye suffer from myopia";
+}else if(getCookie("isMyopia")=="false"){
+  document.getElementById("MyopiaResults").textContent = "You're not suffering from myopia";
 }
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+if(getCookie("isMyopia")=="true"){
+  document.getElementById("result-title").textContent = "we advise you to consult an ophthalmologist";
+  if(getCookie("isMyopiaBoth")=="true"){
+    document.getElementById("MyopiaResults").textContent = "You seem to have myopia";
+    if (getCookie("isMyopiaRight")=="true" && getCookie("isMyopiaLeft")=="true") {
+      document.getElementById("MyopiaResults").textContent += " on both of your eyes.";
+    } else if (getCookie("isMyopiaRight")=="true") {
+    document.getElementById("MyopiaResults").textContent += " on your right eye.";
+  } else if (getCookie("isMyopiaLeft")=="true") {
+    document.getElementById("MyopiaResults").textContent += " on your left eye.";
+  }
+  } else {
+    if (getCookie("isMyopiaRight")=="true") {
+      document.getElementById("MyopiaResults").textContent = "You seem to have myopia on your right eye.";
+    } else if (getCookie("isMyopiaLeft")=="true") {
+      document.getElementById("MyopiaResults").textContent = "You seem to have myopia on your left eye.";
+    }
+  }
+} else {
+  document.getElementById("result-title").textContent = "Negative";
+}
+
+
+*/

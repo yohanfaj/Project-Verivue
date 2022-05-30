@@ -70,6 +70,8 @@ if (one_left_answer_btn) {
   one_left_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_left= 0.1;
+    isMyopia = true;
+    setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
   };
@@ -79,6 +81,8 @@ if (two_left_answer_btn) {
   two_left_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_left= 0.2;
+    isMyopia = true;
+    setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
   };
@@ -87,6 +91,8 @@ const three_left_answer_btn = document.querySelector("#three_left");
 if (three_left_answer_btn) {
   three_left_answer_btn.onclick = function () {
     myopia_left= 0.3;
+    isMyopia = true;
+    setCookie("isMyopiaLeft","true",1)
     btn_audio_check.play();
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
@@ -97,6 +103,8 @@ if (four_left_answer_btn) {
   four_left_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_left= 0.4;
+    isMyopia = true;
+    setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
   };
@@ -105,6 +113,8 @@ const five_left_answer_btn = document.querySelector("#five_left");
 if (five_left_answer_btn) {
   five_left_answer_btn.onclick = function () {
     myopia_left= 0.6;
+    isMyopia = true;
+    setCookie("isMyopiaLeft","true",1)
     btn_audio_check.play();
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
@@ -115,6 +125,8 @@ if (six_left_answer_btn) {
   six_left_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_left= 0.8;
+    isMyopia = true;
+    setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
   };
@@ -123,6 +135,7 @@ const seven_left_answer_btn = document.querySelector("#seven_left");
 if (seven_left_answer_btn) {
   seven_left_answer_btn.onclick = function () {
     myopia_left= 1.0;
+    setCookie("isMyopiaLeft","false",1)
     btn_audio_check.play();
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
@@ -133,6 +146,7 @@ if (eight_left_answer_btn) {
   eight_left_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_left= 1.2;
+    setCookie("isMyopiaLeft","false",1)
     window.open("/myopia/distance_test/index2.html", "_self");
     disableButtons();
   };
@@ -146,7 +160,13 @@ if (one_right_answer_btn) {
   one_right_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_right= 0.1;
-    window.open("/myopia/distance_test/results.html", "_self");
+    isMyopia = true;
+    setCookie("isMyopiaRight","true",1)
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -155,7 +175,13 @@ if (two_right_answer_btn) {
   two_right_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_right= 0.2;
-    window.open("/myopia/distance_test/results.html", "_self");
+    isMyopia = true;
+    setCookie("isMyopiaRight","true",1)
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -163,8 +189,14 @@ const three_right_answer_btn = document.querySelector("#three_right");
 if (three_right_answer_btn) {
   three_right_answer_btn.onclick = function () {
     myopia_right= 0.3;
+    isMyopia = true;
+    setCookie("isMyopiaRight","true",1)
     btn_audio_check.play();
-    window.open("/myopia/distance_test/results.html", "_self");
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -173,7 +205,13 @@ if (four_right_answer_btn) {
   four_right_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_right= 0.4;
-    window.open("/myopia/distance_test/results.html", "_self");
+    isMyopia = true;
+    setCookie("isMyopiaRight","true",1)
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -181,8 +219,14 @@ const five_right_answer_btn = document.querySelector("#five_right");
 if (five_right_answer_btn) {
   five_right_answer_btn.onclick = function () {
     myopia_right= 0.6;
+    isMyopia = true;
+    setCookie("isMyopiaRight","true",1)
     btn_audio_check.play();
-    window.open("/myopia/distance_test/results.html", "_self");
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -191,7 +235,13 @@ if (six_right_answer_btn) {
   six_right_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_right= 0.8;
-    window.open("/myopia/distance_test/results.html", "_self");
+    isMyopia = true;
+    setCookie("isMyopiaRight","true",1)
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -199,8 +249,13 @@ const seven_right_answer_btn = document.querySelector("#seven_right");
 if (seven_right_answer_btn) {
   seven_right_answer_btn.onclick = function () {
     myopia_right= 1.0;
+    setCookie("isMyopiaRight","false",1)
     btn_audio_check.play();
-    window.open("/myopia/distance_test/results.html", "_self");
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -209,7 +264,12 @@ if (eight_right_answer_btn) {
   eight_right_answer_btn.onclick = function () {
     btn_audio_check.play();
     myopia_right= 1.2;
-    window.open("/myopia/distance_test/results.html", "_self");
+    setCookie("isMyopiaRight","false",1)
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
     disableButtons();
   };
 }
@@ -362,25 +422,25 @@ function changeImage() {
 */
 
 
-
-if (myopia_left === 0){
-  setCookie("myopia_left", "0", 1);
+/*
+if (myopia_left === 0.1){
+  setCookie("myopia_left", "0.1", 1);
 }else{
   setCookie("myopia_left", myopia_left.toString(), 1)
 }
 
 
-if (myopia_right === 0){
-  setCookie("myopia_right", "0", 1);
+if (myopia_right === 0.1){
+  setCookie("myopia_right", "0.1", 1);
 }else{
   setCookie("myopia_right", myopia_right.toString(), 1)
 }
+*/
 
 
-
-
+/*
 if(myopia_left < 1.0){
-  setCookie("hasMyopiaLeftD", "true", 1);
+  setCookie("isMyopia", "true", 1);
 }else{
   setCookie("hasMyopiaLeftD", "false", 1);
 }
@@ -390,17 +450,30 @@ if(myopia_right < 1.0){
 }else{
   setCookie("hasMyopiaRightD", "false", 1);
 }
+*/
 
 
 
 
-// Redirection
-if(getCookie("doAllTests")=="true"){
-  window.open("/red_green_test", "_self"); 
-}else{
-  window.open("/myopia/distance_test/results.html", "_self");
+
+function results() {
+    //Here we close the test
+    if (isMyopia == true) {
+      setCookie("isMyopia","true",1);
+    } else {
+      setCookie("isMyopia","false",1);
+    }
+    //Now I decided where I redirect
+    if (getCookie("doAllTests") == "true") {
+      window.open("/myopia/red_green_test", "_self");
+    } else {
+      window.open("/myopia/distance_test/results.html", "_self");
+    }
 }
 
-      
-      
-      
+
+if(myopia_left <= 1 && myopia_right <= 1){
+  setCookie("isMyopiaBoth", "true", 1)
+}else{
+  setCookie("isMyopiaBoth", "false", 1)
+}
