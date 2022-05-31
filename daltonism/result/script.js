@@ -30,7 +30,7 @@ const details_btn = document.querySelector("#details");
 if (details_btn) {
   details_btn.onclick = function () {
     btn_audio_check.play();
-    window.open("/daltonism/details.html", "_self");
+    window.open("https://en.wikipedia.org/wiki/Color_blindness", "_blank");
   };
 }
 
@@ -39,7 +39,7 @@ const home_btn = document.querySelector("#back_home");
 if (home_btn) {
   home_btn.onclick = function () {
     btn_audio_check.play();
-    window.open("https://verivue.glitch.me/", "_self");
+    window.open("/", "_self");
   };
 }
 
@@ -48,11 +48,11 @@ if (home_btn) {
 
 
 if (getCookie("hasRGdef")=="true") {
-  document.getElementById("result-title").textContent = "POSITIVE - You seem to suffer from a RED-GREEN deficiency.";
+  document.getElementById("Conclusion").textContent = "POSITIVE - You seem to suffer from a RED-GREEN deficiency.";
 } else if (getCookie("hasRdef")=="true") {
-  document.getElementById("DaltonismResults").textContent = "POSITIVE -  You seem to suffer from a RED deficiency.";
+  document.getElementById("Conclusion").textContent = "POSITIVE -  You seem to suffer from a RED deficiency.";
 } else if (getCookie("hasGdef")=="true") {
-  document.getElementById("DaltonismResults").textContent = "POSITIVE - You seem to suffer from a GREEN deficiency.";
+  document.getElementById("Conclusion").textContent = "POSITIVE - You seem to suffer from a GREEN deficiency.";
 } else {
-  document.getElementById("DaltonismResults").textContent = "NEGATIVE - You do not seem tu suffer from any form of daltonism.";
+  document.getElementById("Conclusion").textContent = "NEGATIVE - You do not seem tu suffer from any form of daltonism.";
 }

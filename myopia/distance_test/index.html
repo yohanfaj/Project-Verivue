@@ -44,6 +44,19 @@
     <!-- Import the webpage's javascript file -->
     <script src="/myopia/distance_test/script.js" defer></script>
   </head>
+  
+    <header>
+    <img
+      src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/logo_temp.png?v=1648651957459"
+      id="logoVerivue"
+      alt="Editor illustration"
+      title="Click the image!"
+      onclick="window.open('/','_self')"
+    />
+    <!-- This is the start of content for our page -->
+    <h1 id="title">VeriVue®</h1>
+  </header>
+  
   <body>
     <!-- The Modal -->
     <div id="rightHandModal" class="modal">
@@ -66,16 +79,16 @@
 
           <img
             src="https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/lignerouge.png?1653055066100"
+          /><br>
+          <label id="labelLength>">Enter the size of the red line (cm):</label>
+          <input
+            type="text"
+            id="screenSize"
+            placeholder="Size of red line (cm)"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
           />
-          <p>
-            Multiply the result by 100 and position yourself at this distance
-            from your screen.
-          </p>
-          <p>
-            <strong>Example:</strong> measured length = 42 mm, test distance =
-            42mm x 100 = 4200mm = 4.2 meters.
-          </p>
-
+          <button id="sizeButton" onclick="returnDistance()">Submit</button>
+          <h3 id="DistanceToGo"></h3>
           <p id="pModal">
             Please cover your RIGHT eye with your palm to continue. You must
             keep this position during all of the upcoming tests.
@@ -88,7 +101,7 @@
         </div>
         <div class="modal-footer">
           <p>
-            <button
+            <button id="closeButton"
               onclick="document.getElementById('rightHandModal').style.display = 'none';"
             >
               Close
@@ -103,7 +116,6 @@
     <div class="wrapper">
       <div class="content" role="main">
         <!-- This is the start of content for our page -->
-        <a style="font-size: 50px" class="title" id="title">VeriVue®</a>
         <h2 class="question" id="instructions">
           stand at the distance you have calculated and look at the image
         </h2>
@@ -127,7 +139,6 @@
             <button id="six_left">6</button>
             <button id="seven_left">7</button>
             <button id="eight_left">8</button>
-
           </div>
         </div>
       </div>
@@ -135,4 +146,13 @@
 
     <!-- The footer holds our remix button — you can use it for structure or cut it out ✂ -->
   </body>
+
+  <footer>
+    <div id="footerLine"></div>
+    <a href="/">Go back to the Home Page</a>
+    <p>
+      © 2022 - VeriVue® Foundation - Efrei Paris's L2 Transversal Project
+      <br />All rights reserved
+    </p>
+  </footer>
 </html>

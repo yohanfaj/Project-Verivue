@@ -30,7 +30,7 @@ const details_btn = document.querySelector("#details");
 if (details_btn) {
   details_btn.onclick = function () {
     btn_audio_check.play();
-    window.open("/astigmatism/details.html", "_self");
+    window.open("https://en.wikipedia.org/wiki/Astigmatism", "_blank");
   };
 }
 
@@ -48,7 +48,7 @@ const home_btn = document.querySelector("#back_home");
 if (home_btn) {
   home_btn.onclick = function () {
     btn_audio_check.play();
-    window.open("https://verivue.glitch.me/", "_self");
+    window.open("/", "_self");
   };
 }
 
@@ -57,21 +57,21 @@ if (home_btn) {
 
 
 if (getCookie("isAstigmate")=="true") {
-  document.getElementById("result-title").textContent = "Positive, we advise you to consult an ophthalmologist";
+  document.getElementById("Conclusion").textContent = "Positive, we advise you to consult an ophthalmologist";
   if (getCookie("isAstigmateBoth")=="true") {
-    document.getElementById("AstigmatismResults").textContent = "You seem to have astigmatism";
+    document.getElementById("Conclusion").textContent = "You seem to have astigmatism";
     if (getCookie("isAstigmateRight")=="true" && getCookie("isAstigmateLeft")=="true") {
-      document.getElementById("AstigmatismResults").textContent += " on both of your eyes.";
+      document.getElementById("Conclusion").textContent += " on both of your eyes.";
     } else if (getCookie("isAstigmateRight")=="true") {
-    document.getElementById("AstigmatismResults").textContent += " on your right eye.";
+    document.getElementById("Conclusion").textContent += " on your right eye.";
   } else if (getCookie("isAstigmateLeft")=="true") {
-    document.getElementById("AstigmatismResults").textContent += " on your left eye.";
+    document.getElementById("Conclusion").textContent += " on your left eye.";
   }
   } else {
     if (getCookie("isAstigmateRight")=="true") {
-      document.getElementById("AstigmatismResults").textContent = "You seem to have astigmatism on your right eye.";
+      document.getElementById("Conclusion").textContent = "You seem to have astigmatism on your right eye.";
     } else if (getCookie("isAstigmateLeft")=="true") {
-      document.getElementById("AstigmatismResults").textContent = "You seem to have astigmatism on your left eye.";
+      document.getElementById("Conclusion").textContent = "You seem to have astigmatism on your left eye.";
     }
   }
 } else {

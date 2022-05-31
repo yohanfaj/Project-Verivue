@@ -65,6 +65,20 @@ if (getCookie("isAstigmate")=="true") {
   }
   
   
+  //Daltonism
+  if (getCookie("hasRGdef")=="true") {
+  document.getElementById("logo5").src = urlBad;
+  document.getElementById("daltonismResults").textContent = "POSITIVE - You seem to suffer from a RED-GREEN deficiency.";
+} else if (getCookie("hasRdef")=="true") {
+  document.getElementById("logo5").src = urlBad;
+  document.getElementById("daltonismResults").textContent = "POSITIVE -  You seem to suffer from a RED deficiency.";
+} else if (getCookie("hasGdef")=="true") {
+  document.getElementById("logo5").src = urlBad;
+  document.getElementById("daltonismResults").textContent = "POSITIVE - You seem to suffer from a GREEN deficiency.";
+} 
+  
+  
+  
   //Hyperopia
   if(getCookie("Hyperopia Points") == "0"){
     document.getElementById("hyperopiaResults").textContent = "NO Hyperopia";
@@ -77,6 +91,37 @@ if (getCookie("isAstigmate")=="true") {
     document.getElementById("logo2").src = urlBad;
     document.getElementById("hyperopiaResults").textContent = "HEAVY Hyperopia";
   }
+  
+  // Myopia
+  
+  if(getCookie("isMyopiaRight")=="true"){
+    document.getElementById("logo4").src = urlWarning;
+    document.getElementById("MyopiaResults").textContent = "Your right eye suffer from myopia";
+  }else if(getCookie("isMyopiaLeft")=="true"){
+    document.getElementById("logo4").src = urlWarning;
+    document.getElementById("MyopiaResults").textContent = "Your left eye suffer from myopia";
+  }else if(getCookie("isMyopia")=="false"){
+    document.getElementById("MyopiaResults").textContent = "You're not suffering from myopia";
+  }
+
+
+  if(getCookie("isMyopia")=="true"){
+    document.getElementById("result-title").textContent = "We advise you to consult an ophthalmologist"
+      document.getElementById("MyopiaResults").textContent = "You seem to have myopia";
+      if (getCookie("isMyopiaRight")=="true" && getCookie("isMyopiaLeft")=="true") {
+        document.getElementById("logo2").src = urlBad;
+        document.getElementById("MyopiaResults").textContent += " on both of your eyes.";
+      } else if (getCookie("isMyopiaRight")=="true" && getCookie("isMyopiaLeft")=="false") {
+        document.getElementById("logo4").src = urlWarning;
+        document.getElementById("MyopiaResults").textContent += " on your right eye.";
+    } else if (getCookie("isMyopiaLeft")=="true"&& getCookie("isMyopiaRight")=="false") {
+      document.getElementById("logo4").src = urlWarning;
+      document.getElementById("MyopiaResults").textContent += " on your left eye.";
+    }
+  } else {
+    document.getElementById("result-title").textContent = "Negative";
+  }  
+  
   
   
 };

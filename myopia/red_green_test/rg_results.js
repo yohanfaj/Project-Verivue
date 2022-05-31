@@ -31,7 +31,8 @@ const details_btn = document.querySelector("#details");
 if (details_btn) {
   details_btn.onclick = function () {
     btn_audio_check.play();
-    window.open("/myopia/details.html", "_self");
+    window.open("https://en.wikipedia.org/wiki/Myopia", "_blank");
+    window.open("https://en.wikipedia.org/wiki/Far-sightedness", "_blank");
   };
 }
 
@@ -49,7 +50,7 @@ const home_btn = document.querySelector("#back_home");
 if (home_btn) {
   home_btn.onclick = function () {
     btn_audio_check.play();
-    window.open("https://verivue.glitch.me/", "_self");
+    window.open("/", "_self");
   };
 }
 
