@@ -63,13 +63,13 @@ const input = document.querySelector("input");
 input.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
       send_check = textBox.value;
-  if (send_check == "") {
-    textBox.style.borderColor = "red";
-    alert("Please click 'I don't see any number' if you don't see anything");
-    return;
-  }
-  textBox.style.borderColor = "black";
-  checkAnswer(send_check);
+    if (send_check == "") {
+      textBox.style.borderColor = "red";
+      alert("Please click 'I don't see any number' if you don't see anything");
+      return;
+    }
+    textBox.style.borderColor = "black";
+    checkAnswer(send_check);
   }
 });
 

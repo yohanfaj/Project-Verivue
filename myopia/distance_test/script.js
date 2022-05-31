@@ -38,20 +38,38 @@ window.addEventListener("load", load);
 
 function load() {
   document.getElementById("rightHandModal").style.display = "block";
+  document.getElementsByClassName("close")[0].style.visibility = "hidden";
+  document.querySelector('#closeButton').disabled = true;
 }
-
-
 
 
 // Hidding the modal on Escape or Enter
 
 window.addEventListener("keydown", function(e){
-  if (document.getElementById("rightHandModal").style.display != "none" && (e.key == "Escape" || e.key == "Enter")) {
+  console.log(document.getElementById("DistanceToGo").innerHTML != "" && document.getElementById("rightHandModal").style.display != "none" && (e.key == "Escape" || e.key == "Enter"))
+  if (e.target == document.getElementById("screenSize") && e.key == "Enter") {
+    returnDistance();
+  } else if (document.getElementById("DistanceToGo").innerHTML != "" && document.getElementById("rightHandModal").style.display != "none" && (e.key == "Escape" || e.key == "Enter")) {
       document.getElementById("rightHandModal").style.display = "none";
   } else if (e.key == "Escape") {
       document.getElementById("rightHandModal").style.display = "block";
   }
 });
+
+function returnDistance(){
+  var newText = document.getElementById("screenSize").value;
+  if (newText==""){
+    document.getElementById("screenSize").style.borderColor = "red";
+    return;
+  }
+  document.getElementById("screenSize").style.borderColor = "black"; 
+  var valScreen = parseFloat(document.getElementById("screenSize").value);
+  document.getElementById("DistanceToGo").innerHTML = "Please be at <strong>" + valScreen + "m</strong> of your screen.";
+  document.getElementById("DistanceToGo").style.visibility = "visible";
+  document.querySelector('#closeButton').disabled = false;
+  btn_audio_check.play();
+  document.getElementsByClassName("close")[0].style.visibility = "visible";
+}
 
 
 
@@ -73,6 +91,7 @@ if (one_left_answer_btn) {
     isMyopia = true;
     setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -84,6 +103,7 @@ if (two_left_answer_btn) {
     isMyopia = true;
     setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -95,6 +115,7 @@ if (three_left_answer_btn) {
     setCookie("isMyopiaLeft","true",1)
     btn_audio_check.play();
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -106,6 +127,7 @@ if (four_left_answer_btn) {
     isMyopia = true;
     setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -117,6 +139,7 @@ if (five_left_answer_btn) {
     setCookie("isMyopiaLeft","true",1)
     btn_audio_check.play();
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -128,6 +151,7 @@ if (six_left_answer_btn) {
     isMyopia = true;
     setCookie("isMyopiaLeft","true",1)
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -138,6 +162,7 @@ if (seven_left_answer_btn) {
     setCookie("isMyopiaLeft","false",1)
     btn_audio_check.play();
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
@@ -148,9 +173,11 @@ if (eight_left_answer_btn) {
     myopia_left= 1.2;
     setCookie("isMyopiaLeft","false",1)
     window.open("/myopia/distance_test/index2.html", "_self");
+    results2();
     disableButtons();
   };
 }
+
 
 
 // Les 8 boutons pour l'oeil droit (close LEFT eye)
@@ -162,11 +189,7 @@ if (one_right_answer_btn) {
     myopia_right= 0.1;
     isMyopia = true;
     setCookie("isMyopiaRight","true",1)
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -177,11 +200,7 @@ if (two_right_answer_btn) {
     myopia_right= 0.2;
     isMyopia = true;
     setCookie("isMyopiaRight","true",1)
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -192,11 +211,7 @@ if (three_right_answer_btn) {
     isMyopia = true;
     setCookie("isMyopiaRight","true",1)
     btn_audio_check.play();
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -207,11 +222,7 @@ if (four_right_answer_btn) {
     myopia_right= 0.4;
     isMyopia = true;
     setCookie("isMyopiaRight","true",1)
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -222,11 +233,7 @@ if (five_right_answer_btn) {
     isMyopia = true;
     setCookie("isMyopiaRight","true",1)
     btn_audio_check.play();
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -237,11 +244,7 @@ if (six_right_answer_btn) {
     myopia_right= 0.8;
     isMyopia = true;
     setCookie("isMyopiaRight","true",1)
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -251,11 +254,7 @@ if (seven_right_answer_btn) {
     myopia_right= 1.0;
     setCookie("isMyopiaRight","false",1)
     btn_audio_check.play();
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -265,11 +264,7 @@ if (eight_right_answer_btn) {
     btn_audio_check.play();
     myopia_right= 1.2;
     setCookie("isMyopiaRight","false",1)
-    if (getCookie("doAllTests") == "true") {
-      window.open("/myopia/red_green_test", "_self");
-    } else {
-      window.open("/myopia/distance_test/results.html", "_self");
-    }
+    results();
     disableButtons();
   };
 }
@@ -350,108 +345,6 @@ window.onclick = function (event) {
   }
 };
 
-// Hidding the modal on Escape or Enter
-
-window.addEventListener("keypress", function(e){
-  console.log(e)
-  if (document.getElementById("rightHandModal").style.display != "none") {
-    if (e.key == "Escape" || e.key == "Enter") {
-      document.getElementById("rightHandModal").style.display = "none";
-    }
-  }
-});
-
-
-/* LOUIS
-function changeImage() {
-  if (amdImgNumber == 1) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
-  } else if (amdImgNumber == 2) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
-    document.body.style.backgroundColor = "#073742";
-    document.getElementById("instructions").textContent =
-      "Focus on the white dot in the center for 5 seconds, are the lines surrounding it straight?";
-    document.getElementById("title").style.color = "white";
-    document.getElementById("instructions").style.color = "white";
-    document.getElementById("select_answer").style.color = "white";
-  } else if (amdImgNumber == 3) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test1.jpg?v=1649921187569";
-    document.body.style.backgroundColor = "#1f8bb7";
-    document.getElementById("title").style.color = "black";
-    document.getElementById("instructions").style.color = "black";
-    document.getElementById("select_answer").style.color = "black";
-    //We reprompt a modified version of the modal.
-    document.getElementById("rightHandModal").style.display = "block";
-    document.getElementById("modal-header").textContent = "Cover your LEFT eye";
-    document.getElementsByClassName("modal-header")[0].style.backgroundColor =
-      "#0e664c";
-    document.getElementById("pModal").textContent =
-      "Please cover your LEFT eye with your palm to continue. You must keep this position during all of the upcoming tests.";
-    document.getElementsByClassName("modal-footer")[0].style.backgroundColor =
-      "#3f8c75";
-  } else if (amdImgNumber == 4) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_test2.jpg?v=1649921187636";
-  } else if (amdImgNumber == 5) {
-    document.getElementById("amsler_test").src =
-      "https://cdn.glitch.global/c0e804fa-f500-46aa-88e7-c70999b4319c/amsler_high_contrast.png?v=1649921187927";
-    document.body.style.backgroundColor = "#073742";
-    document.getElementById("instructions").textContent =
-      "Focus on the white dot in the center for 5 seconds, are the lines surrounding it straight?";
-    document.getElementById("title").style.color = "white";
-    document.getElementById("instructions").style.color = "white";
-    document.getElementById("select_answer").style.color = "white";
-  } else {
-    //Here we close the test
-    if (isMyopia == true) {
-      setCookie("hasMyopia","true",1);
-    } else {
-      setCookie("hasMyopia","false",1);
-    }
-    //Now I decided where I redirect
-    if(getCookie("doAllTests")=="true"){
-      window.open("/myopia/red_green_test/index.html", "_self");
-    } else {
-      window.open("/amd/amd_results.html", "_self");
-    }
-  }
-}
-*/
-
-
-/*
-if (myopia_left === 0.1){
-  setCookie("myopia_left", "0.1", 1);
-}else{
-  setCookie("myopia_left", myopia_left.toString(), 1)
-}
-
-
-if (myopia_right === 0.1){
-  setCookie("myopia_right", "0.1", 1);
-}else{
-  setCookie("myopia_right", myopia_right.toString(), 1)
-}
-*/
-
-
-/*
-if(myopia_left < 1.0){
-  setCookie("isMyopia", "true", 1);
-}else{
-  setCookie("hasMyopiaLeftD", "false", 1);
-}
-
-if(myopia_right < 1.0){
-  setCookie("hasMyopiaRightD", "true", 1);
-}else{
-  setCookie("hasMyopiaRightD", "false", 1);
-}
-*/
-
 
 
 
@@ -471,9 +364,10 @@ function results() {
     }
 }
 
-
-if(myopia_left <= 1 && myopia_right <= 1){
-  setCookie("isMyopiaBoth", "true", 1)
-}else{
-  setCookie("isMyopiaBoth", "false", 1)
+function results2(){
+  if (isMyopia == true) {
+      setCookie("isMyopia","true",1);
+    } else {
+      setCookie("isMyopia","false",1);
+    }
 }

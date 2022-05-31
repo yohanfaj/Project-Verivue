@@ -165,7 +165,7 @@ function nextTestStep() {
     if (hyperopiaPts >= 1)
       setCookie("hasHyperopia", "true", 1);
     else
-      setCookie("hasHyperopa", "false", 1);
+      setCookie("hasHyperopia", "false", 1);
     
     //Now I decided where I redirect
     if(getCookie("doAllTests")=="true"){

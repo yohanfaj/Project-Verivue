@@ -29,6 +29,7 @@ body {
   margin:0px;
   font-family: serif;
   background-color: #1f8bb7;
+  overflow-x: hidden;
 }
 
 
@@ -74,7 +75,43 @@ header{
     vertical-align: center;
 }
 
-/*End of header*/
+
+footer>#footerLine {
+  border: solid black 1px;
+  margin-top: 20px;
+  width:90vw;
+  margin-bottom: 10px;
+  margin-left: 75px;
+  margin-bottom: 10px;
+}
+
+footer{
+  width:100vw;
+  color: #000000;
+  font-family: "Tahoma", serif;
+  text-align: center;
+}
+
+footer>p{
+  font-style: italic;
+}
+
+footer>a{
+  color: black;
+  text-decoration: underline;
+}
+
+footer>a:hover{
+  color: rgb(184, 210, 219);
+}
+
+footer>a:visited{
+  color: purple;
+}
+
+
+
+/* MAIN CONTENT */
 
 
 
